@@ -1,6 +1,6 @@
 # Arseniy Perel — AI Product Builder Portfolio
 
-**Live site:** [arsenyperelportfolio.lovable.app](https://arsenyperelportfolio.lovable.app)
+**Live site:** [arseny-perel.lovable.app](https://arseny-perel.lovable.app)
 
 Interactive portfolio for **Arseniy Perel**, an AI-native Product Builder focused on AI automation, rapid prototyping, system design, debugging and evidence-driven delivery.
 
@@ -52,7 +52,7 @@ npm run build
 
 ## CV
 
-A print-friendly CV is available at [arsenyperelportfolio.lovable.app/cv](https://arsenyperelportfolio.lovable.app/cv).
+A print-friendly CV is available at [arseny-perel.lovable.app/cv](https://arseny-perel.lovable.app/cv).
 
 ## Contact
 
