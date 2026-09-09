@@ -12,6 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CvRouteImport } from './routes/cv'
 import { Route as ConceptsGlitchIndexRouteImport } from './routes/concepts.glitch.index'
+import { Route as ConceptsGlitchFieldRouteImport } from './routes/concepts.glitch.field'
+import { Route as ConceptsGlitchShardsRouteImport } from './routes/concepts.glitch.shards'
+import { Route as ConceptsGlitchTraceRouteImport } from './routes/concepts.glitch.trace'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,34 +31,80 @@ const ConceptsGlitchIndexRoute = ConceptsGlitchIndexRouteImport.update({
   path: '/concepts/glitch/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConceptsGlitchFieldRoute = ConceptsGlitchFieldRouteImport.update({
+  id: '/concepts/glitch/field',
+  path: '/concepts/glitch/field',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConceptsGlitchShardsRoute = ConceptsGlitchShardsRouteImport.update({
+  id: '/concepts/glitch/shards',
+  path: '/concepts/glitch/shards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConceptsGlitchTraceRoute = ConceptsGlitchTraceRouteImport.update({
+  id: '/concepts/glitch/trace',
+  path: '/concepts/glitch/trace',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cv': typeof CvRoute
+  '/concepts/glitch/field': typeof ConceptsGlitchFieldRoute
+  '/concepts/glitch/shards': typeof ConceptsGlitchShardsRoute
+  '/concepts/glitch/trace': typeof ConceptsGlitchTraceRoute
   '/concepts/glitch/': typeof ConceptsGlitchIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cv': typeof CvRoute
+  '/concepts/glitch/field': typeof ConceptsGlitchFieldRoute
+  '/concepts/glitch/shards': typeof ConceptsGlitchShardsRoute
+  '/concepts/glitch/trace': typeof ConceptsGlitchTraceRoute
   '/concepts/glitch': typeof ConceptsGlitchIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cv': typeof CvRoute
+  '/concepts/glitch/field': typeof ConceptsGlitchFieldRoute
+  '/concepts/glitch/shards': typeof ConceptsGlitchShardsRoute
+  '/concepts/glitch/trace': typeof ConceptsGlitchTraceRoute
   '/concepts/glitch/': typeof ConceptsGlitchIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/cv' | '/concepts/glitch/'
+  fullPaths:
+    | '/'
+    | '/cv'
+    | '/concepts/glitch/field'
+    | '/concepts/glitch/shards'
+    | '/concepts/glitch/trace'
+    | '/concepts/glitch/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cv' | '/concepts/glitch'
-  id: '__root__' | '/' | '/cv' | '/concepts/glitch/'
+  to:
+    | '/'
+    | '/cv'
+    | '/concepts/glitch/field'
+    | '/concepts/glitch/shards'
+    | '/concepts/glitch/trace'
+    | '/concepts/glitch'
+  id:
+    | '__root__'
+    | '/'
+    | '/cv'
+    | '/concepts/glitch/field'
+    | '/concepts/glitch/shards'
+    | '/concepts/glitch/trace'
+    | '/concepts/glitch/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CvRoute: typeof CvRoute
+  ConceptsGlitchFieldRoute: typeof ConceptsGlitchFieldRoute
+  ConceptsGlitchShardsRoute: typeof ConceptsGlitchShardsRoute
+  ConceptsGlitchTraceRoute: typeof ConceptsGlitchTraceRoute
   ConceptsGlitchIndexRoute: typeof ConceptsGlitchIndexRoute
 }
 
@@ -82,12 +131,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConceptsGlitchIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/concepts/glitch/field': {
+      id: '/concepts/glitch/field'
+      path: '/concepts/glitch/field'
+      fullPath: '/concepts/glitch/field'
+      preLoaderRoute: typeof ConceptsGlitchFieldRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/concepts/glitch/shards': {
+      id: '/concepts/glitch/shards'
+      path: '/concepts/glitch/shards'
+      fullPath: '/concepts/glitch/shards'
+      preLoaderRoute: typeof ConceptsGlitchShardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/concepts/glitch/trace': {
+      id: '/concepts/glitch/trace'
+      path: '/concepts/glitch/trace'
+      fullPath: '/concepts/glitch/trace'
+      preLoaderRoute: typeof ConceptsGlitchTraceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CvRoute: CvRoute,
+  ConceptsGlitchFieldRoute: ConceptsGlitchFieldRoute,
+  ConceptsGlitchShardsRoute: ConceptsGlitchShardsRoute,
+  ConceptsGlitchTraceRoute: ConceptsGlitchTraceRoute,
   ConceptsGlitchIndexRoute: ConceptsGlitchIndexRoute,
 }
 export const routeTree = rootRouteImport

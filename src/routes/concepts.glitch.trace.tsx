@@ -223,7 +223,7 @@ function TraceConcept() {
             <div className="tr-cell-top">
               <span>{c.code}</span>
               <span className="tr-state">
-                {reduced ? "verified" : <>{"rejected"}</>}
+                rejected
                 <b>verified</b>
               </span>
             </div>
