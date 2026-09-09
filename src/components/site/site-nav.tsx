@@ -44,7 +44,8 @@ export function SiteNav() {
 
         <ul className="-mx-1 flex min-w-0 flex-1 items-center justify-end gap-0 overflow-x-auto [scrollbar-width:none] sm:gap-0.5 [&::-webkit-scrollbar]:hidden">
           {ITEMS.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} className={cn(item.id === "index" && "hidden sm:block")}>
+
               <a
                 href={`#${item.id}`}
                 aria-current={active === item.id ? "true" : undefined}
