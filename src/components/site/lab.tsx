@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "@/components/concepts/shared";
 import { Reveal, Shell } from "./primitives";
 
 function TwinPreview() {
@@ -102,19 +103,22 @@ function BrainPreview() {
 function TriPreview() {
   const roles = ["Proposer", "Critic", "Verifier"];
   const [i, setI] = useState(0);
+  const reducedMotion = useReducedMotion();
   useEffect(() => {
+    if (reducedMotion || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = window.setInterval(() => setI((v) => (v + 1) % 3), 1600);
     return () => window.clearInterval(id);
-  }, []);
+  }, [reducedMotion]);
+  const activeRole = reducedMotion ? 2 : i;
   return (
     <div className="relative flex h-28 w-full items-center justify-between gap-2 border border-hairline px-4">
       {roles.map((r, idx) => (
         <div key={r} className="flex flex-1 flex-col items-center gap-2">
           <span
             className="block rounded-full bg-current transition-all duration-500"
-            style={{ width: idx === i ? 12 : 6, height: idx === i ? 12 : 6, opacity: idx === i ? 1 : 0.35 }}
+            style={{ width: idx === activeRole ? 12 : 6, height: idx === activeRole ? 12 : 6, opacity: idx === activeRole ? 1 : 0.35 }}
           />
-          <span className="label-mono" style={{ opacity: idx === i ? 1 : 0.5 }}>
+          <span className="label-mono" style={{ opacity: idx === activeRole ? 1 : 0.5 }}>
             {r}
           </span>
         </div>
@@ -127,14 +131,17 @@ function TriPreview() {
 function ReceptionPreview() {
   const [active, setActive] = useState(0);
   const steps = ["QR", "Session", "Incoming", "Decide", "Reply"];
+  const reducedMotion = useReducedMotion();
   useEffect(() => {
+    if (reducedMotion || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = window.setInterval(() => setActive((value) => (value + 1) % steps.length), 1200);
     return () => window.clearInterval(id);
-  }, [steps.length]);
+  }, [reducedMotion, steps.length]);
+  const activeStep = reducedMotion ? 2 : active;
   return (
     <div className="reception-preview">
       <div className="reception-path">
-        {steps.map((step, index) => <span key={step} data-active={index === active}>{step}</span>)}
+        {steps.map((step, index) => <span key={step} data-active={index === activeStep}>{step}</span>)}
       </div>
       <div className="reception-signals"><span>reconnect</span><span>duplicate guard</span><span>logs</span></div>
     </div>
