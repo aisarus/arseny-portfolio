@@ -118,6 +118,15 @@ function CvPage() {
               className="underline underline-offset-2 hover:text-foreground"
             >
               github.com/aisarus
+            </a>{" "}
+            ·{" "}
+            <a
+              href="https://arseny-perel.lovable.app"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="underline underline-offset-2 hover:text-foreground"
+            >
+              arseny-perel.lovable.app
             </a>
           </address>
         </header>
@@ -231,7 +240,7 @@ function CvPage() {
         <Section title="Education">
           <ul className="space-y-2 text-[13.5px] leading-relaxed">
             <li>
-              Bar-Ilan University — B.A., Multidisciplinary Social Sciences, Hi-Tech Track — 2026–
+              Bar-Ilan University — Incoming B.A. student, Multidisciplinary Social Sciences, Hi-Tech Track — 2026
             </li>
             <li>Bar-Ilan University — Mechinat Olim — completed 2026</li>
           </ul>
