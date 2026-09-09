@@ -56,10 +56,11 @@ export function About() {
 
         <Reveal className="mt-12">
           <p className="font-editorial max-w-[24ch] text-[clamp(1.8rem,5.2vw,3.6rem)] leading-[1.06] tracking-[-0.02em] sm:max-w-[26ch]">
-            “Most of my implementation work is AI-assisted. That is the point, not something I hide.
+            “Most of my implementation work is AI-assisted, and that is the method, not a footnote.
             My job is to turn an unclear goal into a system that can be built, challenged and
-            verified — and to notice when the model’s confident answer is wrong.”
+            verified — and to catch the confident answer that is wrong.”
           </p>
+
         </Reveal>
 
         <div className="mt-16 grid gap-10 lg:grid-cols-3 lg:gap-8">
@@ -95,9 +96,10 @@ export function About() {
             ))}
           </ul>
           <p className="mt-6 max-w-[62ch] text-sm leading-relaxed text-foreground/60">
-            This is a working environment, not a mastery claim. Depth varies per item, and where it is
-            exposure rather than expertise, it is described that way.
+            Depth varies per item: some are daily working tools, others are areas I have shipped
+            against but do not claim as specialisms.
           </p>
+
         </Reveal>
       </Shell>
     </section>

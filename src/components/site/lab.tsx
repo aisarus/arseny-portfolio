@@ -143,7 +143,7 @@ const ITEMS = [
     id: "tri",
     name: "TRI·TFM",
     kicker: "Prompt optimization research",
-    body: "A family of experiments on proposer / critic / verifier loops: diversification and stabilization cycles, convergence behaviour and quality control. Deliberately not presented as one canonical repository — it is a line of research, not a finished product.",
+    body: "A family of experiments on proposer / critic / verifier loops: diversification and stabilization cycles, convergence behaviour and quality control. An ongoing line of research rather than a single product.",
     preview: <TriPreview />,
   },
 ];
@@ -161,9 +161,10 @@ export function Lab() {
           </Reveal>
           <Reveal delay={60}>
             <p className="mt-6 max-w-[58ch] text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Not flagship projects and not presented as equals to them. These are the range-finding
-              exercises: motion, 3D interaction, and optimization research.
+              Focused technical exercises alongside the flagship work: motion and determinism, 3D
+              interaction, and prompt-optimization research.
             </p>
+
           </Reveal>
         </div>
 

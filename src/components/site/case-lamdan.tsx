@@ -123,10 +123,11 @@ export function CaseLamdan() {
               </dl>
             </div>
             <p className="border-l-2 border-foreground/30 pl-5 text-sm leading-relaxed text-muted-foreground">
-              Stated limitation: OCR quality and educational-outcome claims are not presented as
-              validated. Real licensed or private evaluation data was unavailable, so those claims stay
-              open rather than being dressed up as results.
+              Current limitations: OCR quality and educational-outcome claims are not validated.
+              Licensed evaluation data was not available, so those claims stay open rather than being
+              presented as results.
             </p>
+
             <ExternalLink href="https://github.com/aisarus/syllabus-to-os">
               syllabus-to-os
             </ExternalLink>
