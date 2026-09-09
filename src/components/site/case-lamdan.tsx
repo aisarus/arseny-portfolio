@@ -60,6 +60,12 @@ export function CaseLamdan() {
           </h2>
         </Reveal>
 
+        <div className="lamdan-flow mt-12" aria-label="Source to saved study material workflow">
+          {["Source", "Draft", "Review", "Save"].map((item, index) => (
+            <div key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></div>
+          ))}
+        </div>
+
         <div className="mt-14 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
           <Reveal>
             <p className="label-mono">Direction correction</p>

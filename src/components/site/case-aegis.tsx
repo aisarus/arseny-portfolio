@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ExternalLink, Reveal, Shell, Tag } from "./primitives";
+import { AegisShardScene } from "./v2-scenes";
 
 type Node = {
   id: string;
@@ -45,8 +46,13 @@ export function CaseAegis() {
   const activeNode = NODES.find((n) => n.id === hover);
 
   return (
-    <section id="aegis" className="on-ink scroll-mt-16 bg-background py-20 text-foreground sm:py-28">
+    <section id="aegis" className="on-ink scroll-mt-16 bg-background text-foreground">
+      <div className="aegis-scene-wrap">
+        <AegisShardScene />
+        <p className="sr-only">The model says done. I check. Goal, contract, plan, execution, failure, replan, verified.</p>
+      </div>
       <Shell>
+        <div className="pt-20 sm:pt-28">
         <div className="hairline-b flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 pb-4">
           <span className="label-mono">Flagship 01 / Aegis</span>
           <span className="label-mono">Autonomous AI development operator · experimental system</span>
@@ -180,7 +186,9 @@ export function CaseAegis() {
             aisarus / aegis
           </ExternalLink>
         </Reveal>
+        </div>
       </Shell>
+      <div className="h-20 sm:h-28" />
     </section>
   );
 }

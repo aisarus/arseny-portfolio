@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { cn } from "@/lib/utils";
+import type { CSSProperties } from "react";
 import { ExternalLink, Reveal, Shell, Tag } from "./primitives";
 
 const LAYERS = [
@@ -37,7 +37,7 @@ const LAYERS = [
 
 export function CaseBotforge() {
   const [active, setActive] = useState("edge");
-  const current = LAYERS.find((l) => l.id === active)!;
+  const current = LAYERS.find((l) => l.id === active) ?? LAYERS[0];
 
   return (
     <section id="botforge" className="on-ink scroll-mt-16 bg-background py-20 text-foreground sm:py-28">
@@ -61,46 +61,26 @@ export function CaseBotforge() {
 
         <div className="mt-14 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <Reveal>
-            <p className="label-mono">Stack, from demo to working system</p>
-            <ul className="hairline-t mt-4">
-              {LAYERS.map((l, i) => {
-                const on = l.id === active;
-                return (
-                  <li key={l.id} className="hairline-b">
-                    <button
-                      type="button"
-                      aria-pressed={on}
-                      onClick={() => setActive(l.id)}
-                      onMouseEnter={() => setActive(l.id)}
-                      className={cn(
-                        "flex w-full items-center gap-4 px-3 py-4 text-left transition-all duration-300",
-                        on ? "bg-foreground/[0.08] pl-5" : "hover:bg-foreground/[0.04]",
-                      )}
-                    >
-                      <span className="label-mono shrink-0">{String(i + 1).padStart(2, "0")}</span>
-                      <span className="flex-1">
-                        <span className="block font-display text-base font-bold tracking-[-0.01em] uppercase">
-                          {l.label}
-                        </span>
-                        <span className="mt-1 block font-mono text-[11px] text-foreground/55">
-                          {l.stack}
-                        </span>
-                      </span>
-                      <span
-                        aria-hidden
-                        className={cn(
-                          "h-px w-6 shrink-0 bg-current transition-all",
-                          on ? "w-10 opacity-100" : "opacity-30",
-                        )}
-                      />
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-            <p className="mt-5 min-h-[3rem] text-sm leading-relaxed text-foreground/70">
-              {current.body}
-            </p>
+            <p className="label-mono">Surface / system — hover, focus or tap</p>
+            <div className="botforge-stack mt-4" data-active={active}>
+              {LAYERS.map((layer, index) => (
+                <button
+                  key={layer.id}
+                  type="button"
+                  aria-pressed={layer.id === active}
+                  onClick={() => setActive(layer.id)}
+                  onMouseEnter={() => setActive(layer.id)}
+                  onFocus={() => setActive(layer.id)}
+                  className="botforge-layer"
+                  style={{ "--layer-index": index } as CSSProperties}
+                >
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{layer.label}</strong>
+                  <small>{layer.stack}</small>
+                </button>
+              ))}
+            </div>
+            {current ? <p className="mt-6 min-h-[3rem] border-l border-signal pl-4 text-sm leading-relaxed text-foreground/70">{current.body}</p> : null}
           </Reveal>
 
           <Reveal delay={80} className="space-y-6">

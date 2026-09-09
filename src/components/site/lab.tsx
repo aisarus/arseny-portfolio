@@ -124,6 +124,23 @@ function TriPreview() {
   );
 }
 
+function ReceptionPreview() {
+  const [active, setActive] = useState(0);
+  const steps = ["QR", "Session", "Incoming", "Decide", "Reply"];
+  useEffect(() => {
+    const id = window.setInterval(() => setActive((value) => (value + 1) % steps.length), 1200);
+    return () => window.clearInterval(id);
+  }, [steps.length]);
+  return (
+    <div className="reception-preview">
+      <div className="reception-path">
+        {steps.map((step, index) => <span key={step} data-active={index === active}>{step}</span>)}
+      </div>
+      <div className="reception-signals"><span>reconnect</span><span>duplicate guard</span><span>logs</span></div>
+    </div>
+  );
+}
+
 const ITEMS = [
   {
     id: "twin",
@@ -146,6 +163,13 @@ const ITEMS = [
     body: "A family of experiments on proposer / critic / verifier loops: diversification and stabilization cycles, convergence behaviour and quality control. An ongoing line of research rather than a single product.",
     preview: <TriPreview />,
   },
+  {
+    id: "receptionist",
+    name: "WhatsApp Receptionist",
+    kicker: "Messaging / automation",
+    body: "A prototype architecture for an AI receptionist over WhatsApp: QR-linked session/auth, inbound message handling, an AI/autoresponder decision step and an outbound reply path. The difficult parts were operational rather than cosmetic — QR expiry, reconnects, duplicate messages, process supervision and logs. Kept as prototype/architecture evidence; no finished booking, CRM or quoting claims.",
+    preview: <ReceptionPreview />,
+  },
 ];
 
 export function Lab() {
@@ -161,29 +185,28 @@ export function Lab() {
           </Reveal>
           <Reveal delay={60}>
             <p className="mt-6 max-w-[58ch] text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Focused technical exercises alongside the flagship work: motion and determinism, 3D
-              interaction, and prompt-optimization research.
+              Focused technical exercises alongside the flagship work: deterministic motion, 3D
+              interaction, prompt optimization and messaging automation.
             </p>
 
           </Reveal>
         </div>
 
-        <div className="mt-12 grid gap-px sm:mt-16 lg:grid-cols-3">
-          {ITEMS.map((item, i) => (
-            <Reveal
+        <div className="lab-mosaic mt-12 sm:mt-16">
+          {ITEMS.map((item) => (
+            <article
               key={item.id}
-              delay={i * 90}
-              className="hairline-t flex flex-col gap-5 py-8 lg:pr-8"
+              className="lab-item hairline-t flex flex-col gap-5 py-8"
             >
               <div className="flex items-baseline justify-between gap-4">
-                <h3 className="font-display text-2xl font-bold tracking-[-0.02em] uppercase">
+                <h3 className="font-display text-xl font-bold leading-tight uppercase sm:text-2xl">
                   {item.name}
                 </h3>
                 <span className="label-mono">{item.kicker}</span>
               </div>
               {item.preview}
               <p className="text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-            </Reveal>
+            </article>
           ))}
         </div>
       </Shell>
