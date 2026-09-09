@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import type { CSSProperties } from "react";
 
-import { clamp, makeRng, useReducedMotion } from "@/components/concepts/shared";
+import { clamp, makeRng } from "@/components/concepts/shared";
+import { useStaticMode } from "./effects";
 import { cn } from "@/lib/utils";
 
 type SignalVariant = "broadcast" | "tracking" | "inspection" | "forensic" | "document" | "xray" | "playground" | "calm";
@@ -17,7 +18,7 @@ type Tear = { top: number; height: number; shift: number; delay: number; duratio
 
 export function SignalField({ variant, intensity = "medium", className, words = [] }: SignalFieldProps) {
   const ref = useRef<HTMLDivElement | null>(null);
-  const reduced = useReducedMotion();
+  const reduced = useStaticMode();
 
   const tears = useRef<Tear[] | null>(null);
   if (!tears.current) {
