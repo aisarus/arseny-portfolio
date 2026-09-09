@@ -44,7 +44,7 @@ export function CaseBotforge() {
       <Shell>
         <div className="hairline-b flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 pb-4">
           <span className="label-mono">Flagship 03 / BotForge</span>
-          <span className="label-mono">AI Telegram automation SaaS prototype</span>
+          <span className="label-mono">AI Telegram automation SaaS · working prototype</span>
         </div>
 
         <div className="mt-10 flex flex-wrap gap-2">
@@ -106,19 +106,20 @@ export function CaseBotforge() {
           <Reveal delay={80} className="space-y-6">
             <p className="text-lg leading-relaxed sm:text-xl">
               Security hardening is part of the build, not an appendix. A client-side “master / god
-              mode” authorization bypass was identified and removed. A tracked <code className="font-mono text-[0.9em]">.env</code>{" "}
-              file was removed from the repository. The remaining secret-management debt is written
-              down rather than quietly closed.
+              mode” authorization bypass was identified and removed, a tracked <code className="font-mono text-[0.9em]">.env</code>{" "}
+              file was taken out of the repository, and the remaining secret-management work is
+              documented rather than quietly closed.
             </p>
 
             <div className="border border-warn/50 p-6">
-              <p className="label-mono text-warn">Not production-ready — stated plainly</p>
+              <p className="label-mono text-warn">Current limitations</p>
               <p className="mt-3 text-sm leading-relaxed text-foreground/80">
                 Client-side AES with a passphrase that ships inside the JavaScript bundle is
-                obfuscation, not confidentiality. This is a working multi-service prototype, and
-                calling it anything stronger would be a false claim.
+                obfuscation, not confidentiality. This is a working multi-service prototype, and it
+                is described as one.
               </p>
             </div>
+
 
             <ExternalLink href="https://github.com/aisarus/ai-employee-forge">
               ai-employee-forge

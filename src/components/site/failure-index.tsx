@@ -64,12 +64,13 @@ const ENTRIES: Entry[] = [
     symptom:
       "A client-side ‘master / god mode’ path granted elevated access to anyone who found the flag.",
     tempting:
-      "‘It is behind a hidden flag and nobody knows about it — low severity, leave it for later.’",
+      "‘It is behind a hidden flag and nobody knows about it — low severity, defer it.’",
     cause:
       "The authorization decision was made in code the user fully controls. Anything decided in the bundle is decided by the client, not by the system.",
-    fix: "Remove the bypass, remove the tracked .env file from the repository, and document the remaining secret-management debt instead of closing it silently.",
+    fix: "Remove the bypass, remove the tracked .env file from the repository, and document the remaining secret-management work.",
     verified:
       "The bypass and the tracked .env are gone. The project is described as a prototype, and client-side AES with a bundled passphrase is labelled obfuscation, not confidentiality.",
+
   },
 ];
 
