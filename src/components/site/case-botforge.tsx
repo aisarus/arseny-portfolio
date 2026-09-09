@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { CSSProperties } from "react";
 
 import { ExternalLink, Reveal, Shell, Tag } from "./primitives";
 import { SignalField } from "./signal-field";
@@ -24,7 +25,7 @@ export function CaseBotforge() {
         <div className="mt-10 flex flex-wrap gap-2">{["SaaS", "Integrations", "Automation"].map((tag) => <Tag key={tag}>{tag}</Tag>)}</div>
         <Reveal className="mt-8"><h2 className="font-editorial max-w-[20ch] text-[clamp(2rem,6.4vw,4.6rem)] leading-[1.02] tracking-[-0.02em]">Can a convincing AI demo be forced to become a real integration?</h2></Reveal>
 
-        <div className="botforge-broadcast mt-14" style={{ "--lens-x": `${lens.x}%`, "--lens-y": `${lens.y}%` } as React.CSSProperties} onPointerMove={(event) => { const bounds = event.currentTarget.getBoundingClientRect(); setLens({ x: ((event.clientX - bounds.left) / bounds.width) * 100, y: ((event.clientY - bounds.top) / bounds.height) * 100 }); }}>
+        <div className="botforge-broadcast mt-14" style={{ "--lens-x": `${lens.x}%`, "--lens-y": `${lens.y}%` } as CSSProperties} onPointerMove={(event) => { const bounds = event.currentTarget.getBoundingClientRect(); setLens({ x: ((event.clientX - bounds.left) / bounds.width) * 100, y: ((event.clientY - bounds.top) / bounds.height) * 100 }); }}>
           <div className="botforge-front" aria-hidden><span>BOTFORGE / CONTROL</span><strong>Automation online</strong><div><i /> <i /> <i /></div><p>Campaigns&nbsp;&nbsp; Conversations&nbsp;&nbsp; Agents&nbsp;&nbsp; Settings</p></div>
           <div className="botforge-back"><span className="label-mono">X-ray / actual system</span><div className="botforge-network">{LAYERS.map((layer, index) => <button key={layer.id} type="button" aria-pressed={active === layer.id} onClick={() => setActive(layer.id)} onFocus={() => setActive(layer.id)} onMouseEnter={() => setActive(layer.id)}><span>{String(index + 1).padStart(2, "0")}</span><strong>{layer.label}</strong><small>{layer.stack}</small></button>)}</div></div>
           <div className="botforge-lens" aria-hidden />
