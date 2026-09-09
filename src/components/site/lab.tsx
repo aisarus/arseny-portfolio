@@ -185,18 +185,18 @@ export function Lab() {
       <Shell>
         <div className="hairline-t pt-6">
           <span className="label-mono">04 / Lab · Range</span>
-          <Reveal className="mt-8">
+          <div className="mt-8">
             <h2 className="display-xl max-w-[16ch] text-[clamp(2.1rem,6.5vw,4.6rem)]">
               Supporting experiments.
             </h2>
-          </Reveal>
-          <Reveal delay={60}>
+          </div>
+          <div>
             <p className="mt-6 max-w-[58ch] text-base leading-relaxed text-muted-foreground sm:text-lg">
               Focused technical exercises alongside the flagship work: deterministic motion, 3D
               interaction, prompt optimization and messaging automation.
             </p>
 
-          </Reveal>
+          </div>
         </div>
 
         <div className="lab-mosaic mt-12 sm:mt-16">
