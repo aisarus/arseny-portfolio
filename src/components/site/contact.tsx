@@ -37,6 +37,18 @@ export function Contact() {
             <div className="mt-3">
               <ExternalLink href="https://github.com/aisarus">github.com/aisarus</ExternalLink>
             </div>
+            <p className="label-mono mt-5">CV</p>
+            <div className="mt-3">
+              <Link
+                to="/cv"
+                className="group inline-flex items-baseline gap-2 border-b border-current/30 pb-0.5 font-mono text-xs uppercase tracking-[0.14em] transition-colors hover:border-current"
+              >
+                One-page resume
+                <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
+                  →
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
 
