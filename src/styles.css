@@ -667,8 +667,8 @@
   --signal-x: 50%; --signal-y: 50%; --signal-clear: 0; --signal-radius-boost: 0px;
   position: absolute; inset: 0; z-index: 1; overflow: hidden; pointer-events: none;
   opacity: .68; contain: strict;
-  mask-image: radial-gradient(circle calc(290px + var(--signal-radius-boost)) at var(--signal-x) var(--signal-y), transparent calc(var(--signal-clear) * 46%), rgb(0 0 0 / calc(1 - var(--signal-clear) * .9)) 82%);
-  -webkit-mask-image: radial-gradient(circle calc(290px + var(--signal-radius-boost)) at var(--signal-x) var(--signal-y), transparent calc(var(--signal-clear) * 46%), rgb(0 0 0 / calc(1 - var(--signal-clear) * .9)) 82%);
+  mask-image: radial-gradient(circle calc(290px + var(--signal-radius-boost)) at var(--signal-x) var(--signal-y), transparent calc(var(--signal-clear) * 46%), #000 calc(var(--signal-clear) * 82%));
+  -webkit-mask-image: radial-gradient(circle calc(290px + var(--signal-radius-boost)) at var(--signal-x) var(--signal-y), transparent calc(var(--signal-clear) * 46%), #000 calc(var(--signal-clear) * 82%));
 }
 .broadcast-rgb, .broadcast-snow, .broadcast-scanlines, .broadcast-roll, .broadcast-tears, .broadcast-ghosts { position: absolute; inset: 0; }
 .broadcast-rgb { background: linear-gradient(90deg, color-mix(in oklab, var(--color-destructive) 18%, transparent), transparent 31%, color-mix(in oklab, oklch(0.55 0.14 250) 18%, transparent) 71%, transparent); mix-blend-mode: multiply; filter: blur(1px); transform: translateX(3px); }
@@ -805,7 +805,7 @@
 
 @media (min-width: 900px) { .tracking-output { grid-template-columns: .55fr 1.15fr .8fr; } }
 @media (max-width: 699px) {
-  .broadcast-glitch { --signal-radius-boost: 40px; mask-image: radial-gradient(circle 220px at var(--signal-x) var(--signal-y), transparent calc(var(--signal-clear) * 48%), rgb(0 0 0 / calc(1 - var(--signal-clear) * .92)) 88%); -webkit-mask-image: radial-gradient(circle 220px at var(--signal-x) var(--signal-y), transparent calc(var(--signal-clear) * 48%), rgb(0 0 0 / calc(1 - var(--signal-clear) * .92)) 88%); }
+  .broadcast-glitch { --signal-radius-boost: 40px; mask-image: radial-gradient(circle 220px at var(--signal-x) var(--signal-y), transparent calc(var(--signal-clear) * 48%), #000 calc(var(--signal-clear) * 88%)); -webkit-mask-image: radial-gradient(circle 220px at var(--signal-x) var(--signal-y), transparent calc(var(--signal-clear) * 48%), #000 calc(var(--signal-clear) * 88%)); }
   .tracking-stages { grid-template-columns: 1fr; min-height: 0; }
   .tracking-wave { display: none; }
   .tracking-stage { min-height: 3.5rem; flex-direction: row; align-items: center; border-right: 0; border-bottom: 1px solid var(--color-hairline); }
