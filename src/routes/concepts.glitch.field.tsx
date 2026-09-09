@@ -166,7 +166,7 @@ function FieldConcept() {
       <header className="cf-head">
         <span>Study 01</span>
         <span className="cf-head-name">Clearing Field</span>
-        <span className="cf-hint">{reduced ? "static mode" : "move the cursor · drag on touch"}</span>
+        <span className="cf-hint">{reduced ? "static mode" : "cursor · touch"}</span>
       </header>
 
       <div ref={hostRef} className="cf-host" data-static={reduced ? "true" : undefined}>

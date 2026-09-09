@@ -176,7 +176,7 @@ function ShardsConcept() {
         <span>Study 02</span>
         <span className="sr-head-name">Shard Reassembly</span>
         <span className="sr-hint">
-          {reduced ? "static mode" : "sweep the cursor · drag on touch"}
+          {reduced ? "static mode" : "sweep · drag"}
         </span>
       </header>
 

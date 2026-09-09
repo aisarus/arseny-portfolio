@@ -201,7 +201,7 @@ function TraceConcept() {
         <span>Study 03</span>
         <span className="tr-head-name">Evidence Trace</span>
         <span className="tr-hint">
-          {reduced ? "static mode" : "draw across the panels · drag on touch"}
+          {reduced ? "static mode" : "draw · drag"}
         </span>
       </header>
 
@@ -254,9 +254,9 @@ const CSS_TRACE = `
   color:rgba(232,230,223,.45);}
 .tr-head-name{color:#e8e6df;}
 .tr-hint{margin-left:auto;text-align:right;}
-@media (min-width:640px){.tr-head{padding:18px 24px;font-size:11px;}}
+@media (min-width:640px){.tr-head{padding:18px 24px;font-size:11px;}.tr-host{padding-top:56px;}}
 .tr-host{position:relative;display:grid;gap:1px;background:rgba(232,230,223,.1);
-  width:100%;height:100dvh;padding-top:46px;overflow:hidden;touch-action:none;}
+  width:100%;height:100dvh;padding-top:58px;overflow:hidden;touch-action:none;}
 .tr-canvas{position:absolute;inset:0;pointer-events:none;z-index:5;}
 .tr-cell{position:relative;overflow:hidden;background:#0b0c0b;padding:14px 12px;
   display:flex;flex-direction:column;justify-content:space-between;gap:10px;--c:0;}
