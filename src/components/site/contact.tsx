@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { ExternalLink, Reveal, Shell } from "./primitives";
 
 export function Contact() {
