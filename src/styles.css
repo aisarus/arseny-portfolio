@@ -847,7 +847,7 @@
 .crt[data-crt="twin"] { grid-column: 1 / span 6; }
 .crt[data-crt="djbrain"] { grid-column: 8 / span 5; }
 .crt[data-crt="tri"] { grid-column: 2 / span 5; }
-.crt[data-crt="receptionist"] { grid-column: 7 / span 6; margin-top: -3rem; }
+.crt[data-crt="receptionist"] { grid-column: 7 / span 6; }
 
 /* Screens */
 .lab-twin-toy, .lab-brain-toy, .lab-tri-toy, .lab-reception-toy {
