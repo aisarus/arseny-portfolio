@@ -105,8 +105,8 @@ export function CaseBotforge() {
 
           <Reveal delay={80} className="space-y-6">
             <p className="text-lg leading-relaxed sm:text-xl">
-              The audit is part of the story, not an appendix. A client-side “master / god mode”
-              authorization bypass was found and removed. A tracked <code className="font-mono text-[0.9em]">.env</code>{" "}
+              Security hardening is part of the build, not an appendix. A client-side “master / god
+              mode” authorization bypass was identified and removed. A tracked <code className="font-mono text-[0.9em]">.env</code>{" "}
               file was removed from the repository. The remaining secret-management debt is written
               down rather than quietly closed.
             </p>

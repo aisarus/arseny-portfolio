@@ -171,12 +171,11 @@ export function CaseAegis() {
 
         <Reveal className="mt-12 flex flex-col gap-4 border border-hairline p-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-[62ch] text-sm leading-relaxed text-foreground/70">
-            The public repository is the historical predecessor and the public hiring bridge for this
-            work. The current development repository is private while publication hygiene and history
-            are being handled.
+            The complete system — acceptance contracts, orchestrator, worker routing and the incident
+            history documented above — is public, including the failure log and its regression tests.
           </p>
-          <ExternalLink href="https://github.com/aisarus/aegis-autopilot">
-            aegis-autopilot
+          <ExternalLink href="https://github.com/aisarus/aegis">
+            aisarus / aegis
           </ExternalLink>
         </Reveal>
       </Shell>

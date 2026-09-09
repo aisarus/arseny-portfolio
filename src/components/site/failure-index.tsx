@@ -62,7 +62,7 @@ const ENTRIES: Entry[] = [
     project: "BotForge",
     title: "Authorization that lived in the browser",
     symptom:
-      "A portfolio security audit found a client-side ‘master / god mode’ path that granted elevated access.",
+      "A client-side ‘master / god mode’ path granted elevated access to anyone who found the flag.",
     tempting:
       "‘It is behind a hidden flag and nobody knows about it — low severity, leave it for later.’",
     cause:
