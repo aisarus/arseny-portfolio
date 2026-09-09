@@ -1,24 +1,47 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { SiteNav } from "@/components/site/site-nav";
+import { Hero } from "@/components/site/hero";
+import { Pipeline } from "@/components/site/pipeline";
+import { CaseAegis } from "@/components/site/case-aegis";
+import { CaseLamdan } from "@/components/site/case-lamdan";
+import { CaseBotforge } from "@/components/site/case-botforge";
+import { FailureIndex } from "@/components/site/failure-index";
+import { Lab } from "@/components/site/lab";
+import { About } from "@/components/site/about";
+import { Contact } from "@/components/site/contact";
+
+const TITLE = "Arseniy Perel — AI-Native Product Builder & Automation";
+const DESCRIPTION =
+  "I turn ambiguous ideas into verifiable products. AI-native product building, orchestration, debugging and implementation oversight. Case studies: Aegis, Lamdan, BotForge.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="min-h-screen bg-background text-foreground">
+      <SiteNav />
+      <Hero />
+      <Pipeline />
+      <CaseAegis />
+      <CaseLamdan />
+      <CaseBotforge />
+      <FailureIndex />
+      <Lab />
+      <About />
+      <Contact />
+    </main>
   );
 }
