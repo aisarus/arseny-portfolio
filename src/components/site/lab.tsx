@@ -200,7 +200,7 @@ export function Lab() {
               className="lab-item hairline-t flex flex-col gap-5 py-8"
             >
               <div className="flex items-baseline justify-between gap-4">
-                <h3 className="font-display text-2xl font-bold tracking-[-0.02em] uppercase">
+                <h3 className="font-display text-xl font-bold leading-tight uppercase sm:text-2xl">
                   {item.name}
                 </h3>
                 <span className="label-mono">{item.kicker}</span>

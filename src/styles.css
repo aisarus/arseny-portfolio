@@ -586,7 +586,7 @@
 }
 
 .lab-item { min-width: 0; }
-.lab-item h3 { overflow-wrap: anywhere; }
+.lab-item h3 { overflow-wrap: normal; word-break: normal; }
 
 .reception-preview {
   display: flex;

@@ -270,8 +270,8 @@ export function AegisShardScene() {
           className="aegis-shard"
           style={{ left: `${shard.x * 100}%`, top: `${shard.y * 100}%`, width: `${shard.w * 100}%`, height: `${shard.h * 100}%` }}
         >
-          <div className="aegis-window" style={{ transform: `translate3d(${-shard.x * 100}vw, ${-shard.y * 100}%, 0)` }}><AegisPlane /></div>
-          <div className="aegis-window aegis-ghost" style={{ transform: `translate3d(${-shard.x * 100}vw, ${-shard.y * 100}%, 0)` }}><AegisPlane /></div>
+          <div className="aegis-window" style={{ transform: `translate3d(${-shard.x * 100}vw, ${-shard.y * 100}svh, 0)` }}><AegisPlane /></div>
+          <div className="aegis-window aegis-ghost" style={{ transform: `translate3d(${-shard.x * 100}vw, ${-shard.y * 100}svh, 0)` }}><AegisPlane /></div>
           <i className="aegis-scan" />
         </div>
       )) : <AegisPlane />}
