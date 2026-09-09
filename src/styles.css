@@ -750,7 +750,7 @@
 
 .botforge-broadcast { --lens-x: 58%; --lens-y: 48%; position: relative; min-height: 35rem; overflow: hidden; border: 1px solid var(--color-hairline); background: var(--color-ink); }
 .botforge-front, .botforge-back { position: absolute; inset: 0; padding: clamp(1rem,4vw,3rem); }
-.botforge-front { z-index: 2; display: flex; flex-direction: column; justify-content: space-between; color: var(--color-paper); background: linear-gradient(110deg, color-mix(in oklab, var(--color-paper) 6%, transparent), transparent); mask-image: radial-gradient(circle 175px at var(--lens-x) var(--lens-y), transparent 0 76%, #000 78%); -webkit-mask-image: radial-gradient(circle 175px at var(--lens-x) var(--lens-y), transparent 0 76%, #000 78%); }
+.botforge-front { z-index: 2; display: flex; flex-direction: column; justify-content: space-between; color: var(--color-paper); background: linear-gradient(110deg, color-mix(in oklab, var(--color-paper) 6%, transparent), transparent); mask-image: radial-gradient(circle 175px at var(--lens-x) var(--lens-y), transparent 0 76%, #000 78%); -webkit-mask-image: radial-gradient(circle 175px at var(--lens-x) var(--lens-y), transparent 0 76%, #000 78%); pointer-events: none; }
 .botforge-front > span, .botforge-front p { font: .65rem var(--font-mono); letter-spacing: .14em; text-transform: uppercase; }
 .botforge-front > strong { max-width: 8ch; font: 700 clamp(3rem,9vw,7rem) var(--font-display); line-height: .84; text-transform: uppercase; }
 .botforge-front div { display: flex; gap: .5rem; }
