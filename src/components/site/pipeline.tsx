@@ -70,6 +70,11 @@ export function Pipeline() {
   return (
     <section id="index" className="scroll-mt-16 py-16 sm:py-24">
       <Shell>
+        <div className="mb-10 grid grid-cols-4 border-y border-hairline py-3 font-mono text-[9px] uppercase tracking-[0.14em] text-muted-foreground sm:text-[11px]">
+          {["Noise", "Control", "Evidence", "Clarity"].map((phase, index) => (
+            <span key={phase} className="flex items-center gap-2"><i className={cn("h-1.5 w-1.5 rounded-full", index === Math.min(3, Math.floor(activeIndex / 2)) ? "bg-signal" : "bg-foreground/20")} />{phase}</span>
+          ))}
+        </div>
         <SectionHead
           index="01"
           kicker="Operating model"
@@ -80,7 +85,7 @@ export function Pipeline() {
               actually runs.
             </>
           }
-          lede="Not a methodology poster. Select a stage to see what happens there, what it produces, and what gets rejected."
+          lede="Ambiguity is reduced in stages. Each step creates evidence for the next and keeps the final judgement under human control."
         />
 
         <Reveal className="mt-12 sm:mt-16">
@@ -88,7 +93,7 @@ export function Pipeline() {
             role="tablist"
             aria-label="Operating model stages"
             aria-orientation="horizontal"
-            className="hairline-t hairline-b flex flex-col md:flex-row"
+            className="pipeline-rail hairline-t hairline-b flex flex-col md:flex-row"
           >
             {STAGES.map((stage, i) => {
               const isActive = stage.id === activeId;
@@ -159,7 +164,7 @@ export function Pipeline() {
           className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
         >
           <div key={`h-${active.id}`} className="animate-in fade-in slide-in-from-bottom-2 duration-500">
-            <p className="label-mono">Evidence panel</p>
+            <p className="label-mono">Stage output</p>
             <h3 className="display-xl mt-4 text-[clamp(1.9rem,6vw,3.4rem)]">{active.name}</h3>
             <ul className="mt-6 space-y-2">
               {active.artifacts.map((a) => (

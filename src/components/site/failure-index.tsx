@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal, Shell } from "./primitives";
+import { EvidenceTraceScene } from "./v2-scenes";
 
 type Entry = {
   id: string;
@@ -87,6 +88,13 @@ export function FailureIndex() {
 
   return (
     <section id="failures" className="scroll-mt-16 overflow-hidden py-20 sm:py-28">
+      <div className="mb-20 sm:mb-28">
+        <div className="mx-auto mb-5 flex w-full max-w-[1320px] items-baseline justify-between px-5 sm:px-8 lg:px-12">
+          <span className="label-mono">Evidence trace / diagnosis before patch</span>
+          <span className="label-mono hidden sm:inline">move to verify</span>
+        </div>
+        <EvidenceTraceScene />
+      </div>
       <Shell>
         <div className="hairline-t pt-6">
           <span className="label-mono">02 / Failure index</span>
