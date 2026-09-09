@@ -1,0 +1,35 @@
+# Arseniy Perel — professional context
+
+Arseniy Perel is an AI Product Builder based in Ramat Gan, Israel. His work focuses on converting loosely defined product or business problems into working, testable prototypes and automation systems with AI-assisted development.
+
+He is not positioning himself as a traditional software engineer who manually authors every implementation line. His contribution is product definition, architecture and constraints, task decomposition, directing coding and research agents, reviewing output, diagnosing failures, designing verification, and iterating until the result is demonstrable against evidence.
+
+Professional targets include AI Product Builder, AI Automation, AI Implementation, AI Solutions, agentic workflow, rapid prototyping and junior/associate AI Solutions Engineering roles. He is particularly suited to environments where someone must translate non-technical ambiguity into a functioning system and communicate the result clearly.
+
+## Method
+AMBIGUITY → CONTRACT → DECOMPOSE → BUILD → BREAK → DIAGNOSE → VERIFY → SHIP
+
+## Selected evidence
+
+### Aegis Operator
+Aegis explores a local autonomous operator architecture where the model is one worker inside a controlled system rather than the entire system. A goal becomes an acceptance contract, strategy and jobs; work is routed to specialized workers; evidence is inspected; failed work can be rejected and replanned; the owner retains review and budget boundaries. Public source: https://github.com/aisarus/aegis-operator
+
+### Lamdan
+Lamdan is a source-linked academic workspace prototype. Its core product question is how generated study material can remain useful without pretending that generation is authoritative. The project moved toward reviewable drafts, source provenance, durable persistence, rollback/cancellation and multilingual study workflows. Source: https://github.com/aisarus/syllabus-to-os
+
+### BotForge
+BotForge began as an AI SaaS prototype and was pushed toward real integration boundaries: Supabase authentication and Postgres/RLS, Deno edge functions, Telegram Bot API connectivity, BYOK AI and operational history. It remains prototype work rather than a production-ready security claim. Source: https://github.com/aisarus/ai-employee-forge
+
+### Additional prototypes
+TWIN is a deterministic CSS/SVG scroll-film experiment. Djbrain is an interactive Three.js procedural brain visualization. A WhatsApp receptionist prototype explored QR-linked sessions, inbound handling, AI/autoresponder decisions, outbound replies and operational issues such as reconnects and duplicate messages.
+
+## Background
+Location: Ramat Gan, Israel.
+Education: incoming B.A. student at Bar-Ilan University, Multidisciplinary Social Sciences, High-Tech Track; completed Bar-Ilan Mechinat Olim in 2026.
+Experience: Education NCO in the Israel Defense Forces (2023–Aug 2024); logistics/operations work at Shifka/Wix (Nov 2024–Mar 2025); earlier English tutoring experience.
+Languages: Russian native; English professional working proficiency; Hebrew developing for academic/work use.
+
+## Contact
+Email: arielperseny@gmail.com
+Portfolio: https://aisarus.github.io/arseny-portfolio/
+GitHub: https://github.com/aisarus
