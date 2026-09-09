@@ -233,7 +233,7 @@ function ShardsConcept() {
 
 const CSS_SHARDS = `
 .sr-root{position:relative;min-height:100dvh;width:100%;overflow:hidden;background:#0e0e0d;color:#f4f1ea;}
-.sr-head{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;gap:12px;align-items:baseline;
+.sr-head{background:linear-gradient(to bottom,rgba(14,14,13,.9) 50%,rgba(14,14,13,0));position:fixed;top:0;left:0;right:0;z-index:40;display:flex;gap:12px;align-items:baseline;
   padding:14px 16px;font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
   color:rgba(244,241,234,.5);}
 .sr-head-name{color:#f4f1ea;}

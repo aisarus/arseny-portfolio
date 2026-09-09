@@ -249,14 +249,14 @@ function TraceConcept() {
 
 const CSS_TRACE = `
 .tr-root{position:relative;min-height:100dvh;width:100%;overflow:hidden;background:#0b0c0b;color:#e8e6df;}
-.tr-head{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;gap:12px;align-items:baseline;
+.tr-head{background:linear-gradient(to bottom,#0b0c0b 55%,rgba(11,12,11,0));position:fixed;top:0;left:0;right:0;z-index:40;display:flex;gap:12px;align-items:baseline;
   padding:14px 16px;font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
   color:rgba(232,230,223,.45);}
 .tr-head-name{color:#e8e6df;}
 .tr-hint{margin-left:auto;text-align:right;}
 @media (min-width:640px){.tr-head{padding:18px 24px;font-size:11px;}}
 .tr-host{position:relative;display:grid;gap:1px;background:rgba(232,230,223,.1);
-  width:100%;height:100dvh;padding-top:0;overflow:hidden;touch-action:none;}
+  width:100%;height:100dvh;padding-top:46px;overflow:hidden;touch-action:none;}
 .tr-canvas{position:absolute;inset:0;pointer-events:none;z-index:5;}
 .tr-cell{position:relative;overflow:hidden;background:#0b0c0b;padding:14px 12px;
   display:flex;flex-direction:column;justify-content:space-between;gap:10px;--c:0;}

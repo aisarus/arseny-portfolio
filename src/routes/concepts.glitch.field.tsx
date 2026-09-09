@@ -209,7 +209,7 @@ function FieldConcept() {
 
 const CSS_FIELD = `
 .cf-root{position:relative;min-height:100dvh;width:100%;overflow:hidden;background:#f2efe8;color:#141312;}
-.cf-head{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;gap:12px;align-items:baseline;
+.cf-head{background:linear-gradient(to bottom,rgba(242,239,232,.92) 50%,rgba(242,239,232,0));position:fixed;top:0;left:0;right:0;z-index:40;display:flex;gap:12px;align-items:baseline;
   padding:14px 16px;font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
   color:rgba(20,19,18,.55);mix-blend-mode:multiply;}
 .cf-head-name{color:#141312;}
