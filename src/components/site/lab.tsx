@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "@/components/concepts/shared";
-import { Reveal, Shell } from "./primitives";
+import { Shell } from "./primitives";
 
 function TwinPreview() {
   const [t, setT] = useState(0);
