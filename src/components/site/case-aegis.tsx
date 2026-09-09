@@ -35,9 +35,9 @@ const EDGES: [string, string][] = [
 ];
 
 const EVIDENCE = [
-  { k: "12 / 12", v: "acceptance criteria passed in a documented owner run; owner accepted the result." },
-  { k: "7 / 7", v: "criteria passed in a documented mixed text→code run, with no manual intervention during execution." },
-  { k: "1/3 → 3/3", v: "successful concurrency runs after resource isolation and shared locks were introduced." },
+  { k: "Full acceptance contract passed", v: "A documented owner run satisfied every acceptance criterion and the owner accepted the result." },
+  { k: "Mixed text-to-code run completed", v: "Text workers and coding agents handled the run without manual intervention during execution." },
+  { k: "Concurrency stabilized", v: "Resource isolation and shared locking removed the race conditions that had been producing intermittent failures." },
 ];
 
 export function CaseAegis() {
