@@ -1,4 +1,5 @@
 import { Reveal, Shell } from "./primitives";
+import { SignalField } from "./signal-field";
 
 const GROUPS = [
   {
@@ -47,8 +48,9 @@ const ENVIRONMENT = [
 
 export function About() {
   return (
-    <section id="about" className="on-ink scroll-mt-16 bg-background py-20 text-foreground sm:py-28">
-      <Shell>
+    <section id="about" className="on-ink signal-section signal-calm scroll-mt-16 bg-background py-20 text-foreground sm:py-28">
+      <SignalField variant="calm" intensity="low" words={["SIGNAL LOCKED"]} />
+      <Shell className="signal-content">
         <div className="hairline-b flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 pb-4">
           <span className="label-mono">05 / Working style</span>
           <span className="label-mono">Arseniy Perel</span>

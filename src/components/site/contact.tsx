@@ -1,12 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { ExternalLink, Reveal, Shell } from "./primitives";
+import { SignalField } from "./signal-field";
 
 export function Contact() {
   return (
-    <section id="contact" className="scroll-mt-16 py-20 sm:py-28">
-      <Shell>
+    <section id="contact" className="signal-section contact-v3 scroll-mt-16 py-20 sm:py-28">
+      <SignalField variant="calm" intensity="low" words={["LOCKED", "CLEAR"]} />
+      <Shell className="signal-content">
         <div className="hairline-t pt-6">
-          <span className="label-mono">06 / Contact</span>
+          <span className="label-mono">06 / Contact · Signal locked</span>
         </div>
 
         <Reveal className="mt-10">
