@@ -193,12 +193,12 @@ export function CaseAegis() {
 
         <Reveal className="mt-12 flex flex-col gap-4 border border-hairline p-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-[62ch] text-sm leading-relaxed text-foreground/70">
-            The complete system — acceptance contracts, orchestrator, worker routing, the failure log
-            and its regression tests — is public.
+            Inspect the public source snapshot — architecture, contract/routing/evidence paths and
+            regression tests — in a separate repository built for source review.
           </p>
 
-          <ExternalLink href="https://github.com/aisarus/aegis">
-            aisarus / aegis
+          <ExternalLink href="https://github.com/aisarus/aegis-operator">
+            aisarus / aegis-operator
           </ExternalLink>
         </Reveal>
         </div>
