@@ -140,7 +140,7 @@ function CvPage() {
             subtitle="Autonomous AI Development Operator"
             role="Product Owner / System Designer / AI-native Builder"
             year="2026"
-            url="https://github.com/aisarus/aegis"
+            url="https://github.com/aisarus/aegis-operator"
             points={[
               "Designed an experimental autonomous task-execution system that turns vague goals into falsifiable acceptance contracts, compiles work into capability-based jobs, routes reasoning/research to text workers and filesystem/shell/test/git work to coding agents, collects evidence and independently accepts or rejects results.",
               "Introduced replanning, cost/capability-aware routing, owner approval gates, Telegram control and isolated Git worktrees.",
