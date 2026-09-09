@@ -145,8 +145,8 @@ function FieldConcept() {
         clarity[i] = cur + (target - cur) * ease;
 
         const mag = target * (10 + 46 * boost) * (0.6 + c.seed * 0.8);
-        pushX[i] += ((dx / d) * mag - pushX[i]!) * 0.12;
-        pushY[i] += ((dy / d) * mag - pushY[i]!) * 0.12;
+        pushX[i] = pushX[i]! + ((dx / d) * mag - pushX[i]!) * 0.12;
+        pushY[i] = pushY[i]! + ((dy / d) * mag - pushY[i]!) * 0.12;
 
         const cc = clarity[i]!;
         node.style.setProperty("--c", cc.toFixed(3));
