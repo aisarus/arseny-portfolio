@@ -49,7 +49,8 @@ export function CaseAegis() {
       <Shell>
         <div className="hairline-b flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 pb-4">
           <span className="label-mono">Flagship 01 / Aegis</span>
-          <span className="label-mono">Autonomous AI development operator</span>
+          <span className="label-mono">Autonomous AI development operator · experimental system</span>
+
         </div>
 
         <div className="mt-10 flex flex-wrap gap-2">
@@ -77,12 +78,12 @@ export function CaseAegis() {
               to the owner rather than declaring itself finished.
             </p>
             <p className="text-foreground">
-              Role, stated honestly: a substantial part of the implementation code was produced with
-              coding agents. I owned the product concept and constraints, the architecture decisions,
-              the decomposition, the agent steering, the review of code and results, the failure
-              diagnosis, verification and iteration. I did not hand-write every line or every test,
-              and the project does not need that claim to be interesting.
+              Development is AI-assisted by design: much of the implementation code is produced with
+              coding agents. I own the product concept and constraints, the architecture, the
+              decomposition, the agent steering, the review of code and results, the failure
+              diagnosis, verification and iteration.
             </p>
+
           </Reveal>
 
           <Reveal delay={80}>
@@ -156,7 +157,7 @@ export function CaseAegis() {
         </div>
 
         <Reveal className="mt-14">
-          <p className="label-mono">Verified evidence</p>
+          <p className="label-mono">Engineering outcomes</p>
           <dl className="hairline-t mt-4 grid grid-cols-1 gap-px sm:grid-cols-3">
             {EVIDENCE.map((e) => (
               <div key={e.k} className="hairline-b min-w-0 py-6 sm:pr-8">
@@ -171,9 +172,10 @@ export function CaseAegis() {
 
         <Reveal className="mt-12 flex flex-col gap-4 border border-hairline p-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-[62ch] text-sm leading-relaxed text-foreground/70">
-            The complete system — acceptance contracts, orchestrator, worker routing and the incident
-            history documented above — is public, including the failure log and its regression tests.
+            The complete system — acceptance contracts, orchestrator, worker routing, the failure log
+            and its regression tests — is public.
           </p>
+
           <ExternalLink href="https://github.com/aisarus/aegis">
             aisarus / aegis
           </ExternalLink>
