@@ -185,8 +185,8 @@ export function Lab() {
           </Reveal>
           <Reveal delay={60}>
             <p className="mt-6 max-w-[58ch] text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Focused technical exercises alongside the flagship work: motion and determinism, 3D
-              interaction, and prompt-optimization research.
+              Focused technical exercises alongside the flagship work: deterministic motion, 3D
+              interaction, prompt optimization and messaging automation.
             </p>
 
           </Reveal>
