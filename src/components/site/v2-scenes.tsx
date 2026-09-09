@@ -7,8 +7,8 @@ import {
   smoothstep,
   stepPointer,
   usePointerField,
-  useReducedMotion,
 } from "@/components/concepts/shared";
+import { useStaticMode } from "./effects";
 
 type Rect = { x: number; y: number; w: number; h: number };
 
@@ -78,7 +78,7 @@ const FIELD_WORDS = [
 ];
 
 export function OperatorField() {
-  const reduced = useReducedMotion();
+  const reduced = useStaticMode();
   const [narrow, setNarrow] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { ref: hostRef, visible } = useSceneVisible<HTMLDivElement>();
@@ -206,7 +206,7 @@ function AegisPlane() {
 }
 
 export function AegisShardScene() {
-  const reduced = useReducedMotion();
+  const reduced = useStaticMode();
   const [narrow, setNarrow] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { ref: hostRef, visible } = useSceneVisible<HTMLDivElement>();
@@ -291,7 +291,7 @@ const TRACE_LINES = [
 ];
 
 export function EvidenceTraceScene() {
-  const reduced = useReducedMotion();
+  const reduced = useStaticMode();
   const [mounted, setMounted] = useState(false);
   const [columns, setColumns] = useState(4);
   const { ref: hostRef, visible } = useSceneVisible<HTMLDivElement>();

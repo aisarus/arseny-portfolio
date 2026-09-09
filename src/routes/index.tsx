@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { EffectsProvider } from "@/components/site/effects";
 import { SiteNav } from "@/components/site/site-nav";
 import { Hero } from "@/components/site/hero";
 import { Pipeline } from "@/components/site/pipeline";
@@ -31,17 +32,19 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <SiteNav />
-      <Hero />
-      <Pipeline />
-      <CaseAegis />
-      <CaseLamdan />
-      <CaseBotforge />
-      <FailureIndex />
-      <Lab />
-      <About />
-      <Contact />
-    </main>
+    <EffectsProvider>
+      <main className="min-h-screen bg-background text-foreground">
+        <SiteNav />
+        <Hero />
+        <Pipeline />
+        <CaseAegis />
+        <CaseLamdan />
+        <CaseBotforge />
+        <FailureIndex />
+        <Lab />
+        <About />
+        <Contact />
+      </main>
+    </EffectsProvider>
   );
 }

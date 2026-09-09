@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useActiveSection } from "@/hooks/use-reveal";
+import { EffectsToggle } from "./effects";
 
 const ITEMS = [
   { id: "index", label: "Index" },
@@ -38,13 +39,13 @@ export function SiteNav() {
           className="shrink-0 font-mono text-[10px] uppercase tracking-[0.16em] whitespace-nowrap sm:text-[11px] sm:tracking-[0.22em]"
         >
           A. Perel
-          <span className="ml-2 hidden text-muted-foreground sm:inline">/ AI Product Builder</span>
+          <span className="ml-2 hidden text-muted-foreground lg:inline">/ AI Product Builder</span>
         </a>
 
 
-        <ul className="-mx-1 flex min-w-0 flex-1 items-center justify-end gap-0 overflow-x-auto [scrollbar-width:none] sm:gap-0.5 [&::-webkit-scrollbar]:hidden">
+        <ul className="ml-auto flex min-w-0 shrink items-center justify-start gap-0 overflow-x-auto [scrollbar-width:none] sm:gap-0.5 [&::-webkit-scrollbar]:hidden">
           {ITEMS.map((item) => (
-            <li key={item.id} className={cn(item.id === "index" && "hidden sm:block")}>
+            <li key={item.id} className={cn(item.id === "index" && "hidden lg:block")}>
 
               <a
                 href={`#${item.id}`}
@@ -69,6 +70,8 @@ export function SiteNav() {
             </li>
           ))}
         </ul>
+
+        <EffectsToggle />
       </nav>
     </header>
   );
