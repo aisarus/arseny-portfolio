@@ -1,0 +1,27 @@
+# Arseniy Perel
+
+> AI Product Builder based in Ramat Gan, Israel. I turn ambiguous product and business ideas into working, verifiable systems using AI-assisted development.
+
+Primary professional areas: AI automation, rapid prototyping, agent workflows, AI implementation, API integrations, prompt/workflow design, debugging, verification and product delivery.
+
+Current status: incoming B.A. student at Bar-Ilan University, Multidisciplinary Social Sciences, High-Tech Track. Open to junior, student, part-time and project roles in Israel or remote where practical product building and AI automation matter more than traditional line-by-line software engineering credentials.
+
+## Primary pages
+- Portfolio: https://aisarus.github.io/arseny-portfolio/
+- About: https://aisarus.github.io/arseny-portfolio/about/
+- AI automation profile: https://aisarus.github.io/arseny-portfolio/ai-automation/
+- CV: https://aisarus.github.io/arseny-portfolio/cv/
+- Plain-text resume: https://aisarus.github.io/arseny-portfolio/resume.txt
+- Machine-readable profile: https://aisarus.github.io/arseny-portfolio/profile.json
+- Extended context: https://aisarus.github.io/arseny-portfolio/llms-full.txt
+
+## Selected work
+- Aegis Operator: https://aisarus.github.io/arseny-portfolio/work/aegis/
+- Lamdan: https://aisarus.github.io/arseny-portfolio/work/lamdan/
+- BotForge: https://aisarus.github.io/arseny-portfolio/work/botforge/
+
+## External evidence
+- GitHub profile: https://github.com/aisarus
+- Aegis public source: https://github.com/aisarus/aegis-operator
+- Lamdan source: https://github.com/aisarus/syllabus-to-os
+- BotForge source: https://github.com/aisarus/ai-employee-forge

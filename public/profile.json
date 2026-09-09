@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://aisarus.github.io/arseny-portfolio/#person",
+  "name": "Arseniy Perel",
+  "url": "https://aisarus.github.io/arseny-portfolio/",
+  "email": "mailto:arielperseny@gmail.com",
+  "jobTitle": "AI Product Builder",
+  "description": "AI-native product builder in Ramat Gan, Israel focused on AI automation, rapid prototyping, agent workflows, debugging and verifiable delivery.",
+  "homeLocation": {
+    "@type": "Place",
+    "name": "Ramat Gan, Israel"
+  },
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "Bar-Ilan University",
+    "url": "https://www.biu.ac.il/"
+  },
+  "knowsAbout": [
+    "AI automation",
+    "AI-assisted product development",
+    "agent orchestration",
+    "rapid prototyping",
+    "API integrations",
+    "prompt engineering",
+    "debugging",
+    "software verification"
+  ],
+  "sameAs": [
+    "https://github.com/aisarus",
+    "https://arseny-perel.lovable.app"
+  ],
+  "subjectOf": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Aegis Operator",
+      "codeRepository": "https://github.com/aisarus/aegis-operator"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Lamdan",
+      "codeRepository": "https://github.com/aisarus/syllabus-to-os"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "BotForge",
+      "codeRepository": "https://github.com/aisarus/ai-employee-forge"
+    }
+  ]
+}

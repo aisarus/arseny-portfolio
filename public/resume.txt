@@ -1,0 +1,38 @@
+ARSENIY PEREL
+AI PRODUCT BUILDER | AI AUTOMATION | RAPID PROTOTYPING
+Ramat Gan, Israel
+Email: arielperseny@gmail.com
+Portfolio: https://aisarus.github.io/arseny-portfolio/
+GitHub: https://github.com/aisarus
+
+PROFILE
+AI-native product builder focused on turning ambiguous ideas into working, verifiable systems using AI-assisted development. Strengths include product definition, requirements and acceptance criteria, workflow decomposition, agent orchestration, API integrations, prompt/workflow design, debugging, evidence-based verification and rapid iteration.
+
+SELECTED PROJECTS
+Aegis Operator — https://github.com/aisarus/aegis-operator
+Autonomous operator architecture: goal → acceptance contract → strategy → jobs → worker routing → evidence → replanning → owner review. Focus on deterministic boundaries, failure diagnosis and verification rather than trusting model-completion claims.
+
+Lamdan — https://github.com/aisarus/syllabus-to-os
+Source-linked academic workspace prototype for reviewable AI-assisted study materials, provenance, persistence, rollback/cancellation and multilingual workflows.
+
+BotForge — https://github.com/aisarus/ai-employee-forge
+AI SaaS prototype developed toward real integrations using Supabase auth/Postgres/RLS, Deno Edge Functions, Telegram Bot API and BYOK AI. Prototype, not represented as production-ready.
+
+CORE CAPABILITIES
+AI automation; AI-assisted product development; rapid prototyping; agent workflows; prompt engineering; API integrations; requirements decomposition; debugging; QA and verification; Git/GitHub; React/TypeScript exposure; Python basics; product communication.
+
+EXPERIENCE
+Shifka / Wix — Logistics & Operations, Nov 2024–Mar 2025
+Coordinated recurring distribution and operational tasks in a large workplace environment, including ordering, floor rounds and time-sensitive delivery workflows.
+
+Israel Defense Forces — Education NCO, 2023–Aug 2024
+Instruction, coordination and communication work in an IDF education role.
+
+EDUCATION
+Bar-Ilan University — Incoming B.A. student, Multidisciplinary Social Sciences, High-Tech Track — 2026
+Bar-Ilan University — Mechinat Olim — completed 2026
+
+LANGUAGES
+Russian — native
+English — professional working proficiency
+Hebrew — developing academic/work proficiency
