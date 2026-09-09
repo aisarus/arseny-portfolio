@@ -157,10 +157,10 @@ export function CaseAegis() {
 
         <Reveal className="mt-14">
           <p className="label-mono">Verified evidence</p>
-          <dl className="hairline-t mt-4 grid gap-px sm:grid-cols-3">
+          <dl className="hairline-t mt-4 grid grid-cols-1 gap-px sm:grid-cols-3">
             {EVIDENCE.map((e) => (
-              <div key={e.k} className="hairline-b py-6 sm:pr-8">
-                <dt className="font-display text-3xl font-bold tracking-[-0.03em] sm:text-4xl">
+              <div key={e.k} className="hairline-b min-w-0 py-6 sm:pr-8">
+                <dt className="font-display text-xl font-bold leading-snug tracking-[-0.02em] break-words sm:text-2xl">
                   {e.k}
                 </dt>
                 <dd className="mt-3 text-sm leading-relaxed text-foreground/70">{e.v}</dd>
