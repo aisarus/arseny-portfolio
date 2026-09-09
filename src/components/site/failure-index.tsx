@@ -2,6 +2,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal, Shell } from "./primitives";
 import { EvidenceTraceScene } from "./v2-scenes";
+import { SignalField } from "./signal-field";
 
 type Entry = {
   id: string;
@@ -87,7 +88,8 @@ export function FailureIndex() {
   const [open, setOpen] = useState<string>("ledger");
 
   return (
-    <section id="failures" className="scroll-mt-16 overflow-hidden py-20 sm:py-28">
+    <section id="failures" className="signal-section failures-v3 scroll-mt-16 overflow-hidden py-20 sm:py-28">
+      <SignalField variant="forensic" intensity="high" words={["FALSE POSITIVE", "FRAME LOST", "STALE", "BYPASS"]} />
       <div className="mb-20 sm:mb-28">
         <div className="mx-auto mb-5 flex w-full max-w-[1320px] items-baseline justify-between px-5 sm:px-8 lg:px-12">
           <span className="label-mono">Evidence trace / diagnosis before patch</span>
@@ -95,7 +97,7 @@ export function FailureIndex() {
         </div>
         <EvidenceTraceScene />
       </div>
-      <Shell>
+      <Shell className="signal-content">
         <div className="hairline-t pt-6">
           <span className="label-mono">02 / Failure index</span>
           <Reveal className="mt-8">
@@ -116,15 +118,16 @@ export function FailureIndex() {
           {ENTRIES.map((e, i) => {
             const isOpen = open === e.id;
             return (
-              <li key={e.id} className={cn("hairline-t", i === ENTRIES.length - 1 && "hairline-b")}>
+              <li key={e.id} data-incident={e.id} className={cn("failure-record hairline-t", i === ENTRIES.length - 1 && "hairline-b")}>
                 <h3>
                   <button
                     type="button"
                     aria-expanded={isOpen}
                     aria-controls={`failure-${e.id}`}
                     onClick={() => setOpen(isOpen ? "" : e.id)}
-                    className="group flex w-full items-start gap-4 py-6 text-left sm:gap-8"
+                    className="group relative flex w-full items-start gap-4 overflow-hidden py-6 text-left sm:gap-8"
                   >
+                    <span aria-hidden className="failure-ghost">{e.tempting}</span>
                     <span className="label-mono mt-2 shrink-0">
                       {String(i + 1).padStart(2, "0")}
                     </span>
