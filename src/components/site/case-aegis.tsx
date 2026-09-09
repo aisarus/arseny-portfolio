@@ -2,6 +2,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ExternalLink, Reveal, Shell, Tag } from "./primitives";
 import { AegisShardScene } from "./v2-scenes";
+import { SignalField } from "./signal-field";
 
 type Node = {
   id: string;
@@ -9,18 +10,21 @@ type Node = {
   x: number;
   y: number;
   detail: string;
+  failure: string;
 };
 
 const NODES: Node[] = [
-  { id: "goal", label: "Vague goal", x: 8, y: 50, detail: "An owner-stated objective with no testable definition of done." },
-  { id: "contract", label: "Acceptance contract", x: 26, y: 20, detail: "The goal is compiled into falsifiable acceptance criteria before any work is scheduled." },
-  { id: "strategy", label: "Strategy + jobs", x: 26, y: 80, detail: "A strategy is built and compiled into discrete jobs with explicit dependencies." },
-  { id: "text", label: "Text workers", x: 50, y: 18, detail: "Reasoning and research work is routed to text models." },
-  { id: "code", label: "Coding agents", x: 50, y: 82, detail: "Filesystem, shell, test and git work is routed to coding agents." },
-  { id: "evidence", label: "Evidence", x: 72, y: 50, detail: "Artifacts, logs and check results are collected as the basis for acceptance." },
-  { id: "verdict", label: "Accept / reject", x: 88, y: 22, detail: "An independent verdict step accepts or rejects the work against the contract." },
-  { id: "replan", label: "Replan", x: 88, y: 78, detail: "Rejected work triggers replanning instead of silent retries; final control returns to the owner." },
+  { id: "goal", label: "Vague goal", x: 8, y: 50, detail: "An owner-stated objective with no testable definition of done.", failure: "Ambiguity survives into execution." },
+  { id: "contract", label: "Acceptance contract", x: 26, y: 20, detail: "The goal is compiled into falsifiable acceptance criteria before any work is scheduled.", failure: "A plausible result passes without proving the goal." },
+  { id: "strategy", label: "Strategy + jobs", x: 26, y: 80, detail: "A strategy is built and compiled into discrete jobs with explicit dependencies.", failure: "Dependencies or resource boundaries are wrong." },
+  { id: "text", label: "Text workers", x: 50, y: 18, detail: "Reasoning and research work is routed to text models.", failure: "Reasoning is mistaken for executable evidence." },
+  { id: "code", label: "Coding agents", x: 50, y: 82, detail: "Filesystem, shell, test and git work is routed to coding agents.", failure: "A session resumes before it exists." },
+  { id: "evidence", label: "Evidence", x: 72, y: 50, detail: "Artifacts, logs and check results are collected as the basis for acceptance.", failure: "Observation mutates the state being measured." },
+  { id: "verdict", label: "Accept / reject", x: 88, y: 22, detail: "An independent verdict step accepts or rejects the work against the contract.", failure: "Confidence substitutes for verification." },
+  { id: "replan", label: "Replan", x: 88, y: 78, detail: "Rejected work triggers replanning instead of silent retries; final control returns to the owner.", failure: "Blind retry repeats the same broken path." },
 ];
+
+const RUN = ["Goal", "Contract", "Plan", "Execution", "Failure", "Replan", "Verified"];
 
 const EDGES: [string, string][] = [
   ["goal", "contract"],
@@ -43,6 +47,7 @@ const EVIDENCE = [
 
 export function CaseAegis() {
   const [hover, setHover] = useState<string | null>(null);
+  const [runStep, setRunStep] = useState(0);
   const activeNode = NODES.find((n) => n.id === hover);
 
   return (
@@ -51,7 +56,9 @@ export function CaseAegis() {
         <AegisShardScene />
         <p className="sr-only">The model says done. I check. Goal, contract, plan, execution, failure, replan, verified.</p>
       </div>
-      <Shell>
+      <div className="signal-section aegis-case-v3">
+      <SignalField variant="inspection" intensity="medium" words={["ROUTE", "REJECT", "REPLAN", "VERIFY"]} />
+      <Shell className="signal-content">
         <div className="pt-20 sm:pt-28">
         <div className="hairline-b flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 pb-4">
           <span className="label-mono">Flagship 01 / Aegis</span>
@@ -94,7 +101,7 @@ export function CaseAegis() {
 
           <Reveal delay={80}>
             <p className="label-mono">System diagram — hover or focus a node</p>
-            <div className="relative mt-4 aspect-[4/3] w-full border border-hairline sm:aspect-[16/10]">
+            <div className="aegis-inspector relative mt-4 aspect-[4/3] w-full border border-hairline sm:aspect-[16/10]">
               <svg
                 viewBox="0 0 100 100"
                 preserveAspectRatio="none"
@@ -124,6 +131,7 @@ export function CaseAegis() {
                 })}
               </svg>
 
+              <SignalField variant="inspection" intensity="high" />
               {NODES.map((n) => (
                 <button
                   key={n.id}
@@ -156,10 +164,17 @@ export function CaseAegis() {
                 </button>
               ))}
             </div>
-            <p className="mt-4 min-h-[3.5rem] text-sm leading-relaxed text-foreground/70">
-              {activeNode ? activeNode.detail : "Owner goal in, evidence-checked result out. Rejection loops back to strategy, not to a blind retry."}
+            <p className="mt-4 min-h-[5rem] text-sm leading-relaxed text-foreground/70">
+              {activeNode ? <><span className="text-foreground">{activeNode.detail}</span><br /><span className="font-mono text-[10px] uppercase tracking-[0.12em] text-warn">Failure surface — {activeNode.failure}</span></> : "Owner goal in, evidence-checked result out. Rejection loops back to strategy, not to a blind retry."}
             </p>
           </Reveal>
+        </div>
+        <div className="aegis-run mt-16" onPointerMove={(event) => { const bounds = event.currentTarget.getBoundingClientRect(); setRunStep(Math.round(Math.max(0, Math.min(1, (event.clientX - bounds.left) / bounds.width)) * (RUN.length - 1))); }}>
+          <p className="label-mono">Scrub the run</p>
+          <div className="aegis-run-track" role="list" aria-label="Aegis run flow">
+            {RUN.map((item, index) => <button type="button" role="listitem" key={item} data-active={index <= runStep} onFocus={() => setRunStep(index)} onClick={() => setRunStep(index)}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></button>)}
+          </div>
+          <p className="aegis-run-status">{RUN[runStep]} <span aria-hidden>— signal {runStep === 4 ? "lost" : runStep === 6 ? "verified" : "routing"}</span></p>
         </div>
 
         <Reveal className="mt-14">
@@ -188,6 +203,7 @@ export function CaseAegis() {
         </Reveal>
         </div>
       </Shell>
+      </div>
       <div className="h-20 sm:h-28" />
     </section>
   );

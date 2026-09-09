@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import type { CSSProperties } from "react";
 
 import { clamp, makeRng, useReducedMotion } from "@/components/concepts/shared";
 import { cn } from "@/lib/utils";
@@ -125,7 +126,7 @@ export function SignalField({ variant, intensity = "medium", className, words = 
               "--tear-shift": `${tear.shift}px`,
               "--tear-delay": `${tear.delay}s`,
               "--tear-duration": `${tear.duration}s`,
-            } as React.CSSProperties}
+            } as CSSProperties}
           />
         ))}
       </div>

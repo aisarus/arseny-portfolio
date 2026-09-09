@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ExternalLink, Reveal, Shell, Tag } from "./primitives";
+import { SignalField } from "./signal-field";
 
 const CORRECTION = [
   {
@@ -37,12 +38,20 @@ const RELIABILITY = [
   ["Browser E2E flows", "Real end-to-end flows in a browser, not only unit assertions."],
 ];
 
+const PROVENANCE = [
+  ["Source", "Keep every generated artifact traceable to the material it came from."],
+  ["Draft", "Treat generation as a proposal, never an authority."],
+  ["Review", "Make the human check explicit before material is trusted."],
+  ["Save", "Persist approved work with recovery and rollback paths."],
+];
+
 export function CaseLamdan() {
   const [step, setStep] = useState(1);
 
   return (
-    <section id="lamdan" className="scroll-mt-16 py-20 sm:py-28">
-      <Shell>
+    <section id="lamdan" className="signal-section lamdan-v3 scroll-mt-16 py-20 sm:py-28">
+      <SignalField variant="document" intensity="low" words={["SOURCE", "DRAFT", "REVIEW", "SAVE"]} />
+      <Shell className="signal-content">
         <div className="hairline-b flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 pb-4">
           <span className="label-mono">Flagship 02 / Lamdan</span>
           <span className="label-mono">AI-first academic content workspace</span>
@@ -60,10 +69,14 @@ export function CaseLamdan() {
           </h2>
         </Reveal>
 
-        <div className="lamdan-flow mt-12" aria-label="Source to saved study material workflow">
-          {["Source", "Draft", "Review", "Save"].map((item, index) => (
-            <div key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></div>
+        <div className="lamdan-document mt-12">
+          <div className="lamdan-registration" aria-hidden>SOURCE MATERIAL / OCR RECOVERY / PROVENANCE</div>
+          <div className="lamdan-flow" role="tablist" aria-label="Source to saved study material workflow">
+          {PROVENANCE.map(([item], index) => (
+            <button key={item} type="button" role="tab" aria-selected={step === index} onClick={() => setStep(index)} onFocus={() => setStep(index)}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong><i aria-hidden>↳</i></button>
           ))}
+          </div>
+          <p className="lamdan-stage-note"><span className="label-mono">Annotation {String(step + 1).padStart(2, "0")}</span>{PROVENANCE[step]?.[1]}</p>
         </div>
 
         <div className="mt-14 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">

@@ -1,11 +1,13 @@
 import { Shell } from "./primitives";
 import { OperatorField } from "./v2-scenes";
+import { SignalField } from "./signal-field";
 
 export function Hero() {
   return (
     <section id="top" className="operator-hero">
       <div className="operator-sticky">
         <OperatorField />
+        <SignalField variant="broadcast" intensity="high" words={["GOAL", "CONTRACT", "FAILURE", "EVIDENCE", "VERIFIED"]} />
         <Shell className="operator-content">
           <div className="operator-topline">
             <span>Arseniy Perel / AI Product Builder</span>
