@@ -377,7 +377,8 @@
   min-height: 620px;
   overflow: hidden;
   touch-action: pan-y;
-  background: var(--color-background);
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .aegis-shard {
@@ -385,7 +386,7 @@
   --shard-ghost: 0;
   position: absolute;
   overflow: hidden;
-  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-foreground) calc(5% + var(--shard-lock) * 12%), transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--paper) calc(5% + var(--shard-lock) * 12%), transparent);
   will-change: transform;
 }
 
@@ -407,7 +408,7 @@
 .aegis-scan {
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(to bottom, color-mix(in oklab, var(--color-background) 34%, transparent) 0 1px, transparent 1px 5px);
+  background: repeating-linear-gradient(to bottom, color-mix(in oklab, var(--ink) 34%, transparent) 0 1px, transparent 1px 5px);
   opacity: calc(0.56 - var(--shard-lock) * 0.5);
 }
 
@@ -431,7 +432,7 @@
   font-size: 0.65rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-muted-foreground);
+  color: color-mix(in oklab, var(--paper) 58%, transparent);
 }
 
 .aegis-plane-title {
@@ -450,7 +451,7 @@
 
 .aegis-plane-rule {
   height: 1px;
-  background: var(--color-hairline);
+  background: color-mix(in oklab, var(--paper) 18%, transparent);
 }
 
 .evidence-trace {

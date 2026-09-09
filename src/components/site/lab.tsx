@@ -193,10 +193,9 @@ export function Lab() {
         </div>
 
         <div className="lab-mosaic mt-12 sm:mt-16">
-          {ITEMS.map((item, i) => (
-            <Reveal
+          {ITEMS.map((item) => (
+            <article
               key={item.id}
-              delay={i * 90}
               className="lab-item hairline-t flex flex-col gap-5 py-8"
             >
               <div className="flex items-baseline justify-between gap-4">
@@ -207,7 +206,7 @@ export function Lab() {
               </div>
               {item.preview}
               <p className="text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-            </Reveal>
+            </article>
           ))}
         </div>
       </Shell>
