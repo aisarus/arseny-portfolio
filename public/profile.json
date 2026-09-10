@@ -1,9 +1,9 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://aisarus.github.io/arseny-portfolio/#person",
+  "@id": "https://arseny-perel.lovable.app/#person",
   "name": "Arseniy Perel",
-  "url": "https://aisarus.github.io/arseny-portfolio/",
+  "url": "https://arseny-perel.lovable.app/",
   "email": "mailto:arielperseny@gmail.com",
   "jobTitle": "AI Product Builder",
   "description": "AI-native product builder in Ramat Gan, Israel focused on AI automation, rapid prototyping, agent workflows, debugging and verifiable delivery.",
@@ -28,7 +28,7 @@
   ],
   "sameAs": [
     "https://github.com/aisarus",
-    "https://arseny-perel.lovable.app"
+    "https://www.linkedin.com/in/%D0%B0%D1%80%D1%81%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BF%D0%B5%D1%80%D0%B5%D0%BB%D1%8C-68a21132b/"
   ],
   "subjectOf": [
     {
