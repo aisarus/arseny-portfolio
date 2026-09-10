@@ -62,3 +62,11 @@ jobs:
           grep -q "Aegis Operator" dist/client/work/aegis/index.html
           grep -q "Lamdan" dist/client/work/lamdan/index.html
           grep -q "BotForge" dist/client/work/botforge/index.html
+
+      - name: Upload verified production artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-production-static
+          path: dist/client
+          if-no-files-found: error
+          retention-days: 7
