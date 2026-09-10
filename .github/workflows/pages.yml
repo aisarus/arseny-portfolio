@@ -1,4 +1,4 @@
-name: Build and deploy GitHub Pages
+name: Verify portfolio build
 
 on:
   push:
@@ -9,11 +9,9 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: github-pages
+  group: portfolio-build-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -31,12 +29,12 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Build static Pages site
+      - name: Build static site
         env:
           PAGES_STATIC_BUILD: "true"
         run: bun run build
 
-      - name: Verify static output
+      - name: Verify recruiter-facing output
         run: |
           test -f dist/client/index.html
           test -f dist/client/cv/index.html
@@ -49,27 +47,4 @@ jobs:
           grep -q "Arseniy Perel" dist/client/index.html
           grep -q "arseny-perel.lovable.app" dist/client/index.html
           grep -q "arseny-perel.lovable.app" dist/client/sitemap.xml
-          touch dist/client/.nojekyll
-          cp dist/client/index.html dist/client/404.html
-
-      - name: Configure Pages
-        if: github.event_name != 'pull_request'
-        uses: actions/configure-pages@v6
-
-      - name: Upload Pages artifact
-        if: github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: dist/client
-
-  deploy:
-    if: github.event_name != 'pull_request'
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          grep -q "linkedin.com" dist/client/index.html
