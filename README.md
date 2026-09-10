@@ -65,4 +65,4 @@ Ramat Gan, Israel
 
 ---
 
-GitHub is the source of truth and production is deployed on Vercel. Lovable may still be used as an editor, but it is not part of the production hosting path.
+GitHub is the source of truth and Vercel owns the production hosting path. Lovable is optional editor-only tooling and is not part of production delivery.
