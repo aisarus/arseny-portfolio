@@ -28,7 +28,7 @@ const About = lazy(() =>
 const TITLE = "Arseniy Perel — AI Product Builder in Israel | Automation & Prototyping";
 const DESCRIPTION =
   "Arseniy Perel is an AI Product Builder in Ramat Gan, Israel. AI automation, rapid prototyping, agent workflows, API integrations, debugging and evidence-driven delivery.";
-const CANONICAL = "https://arseny-perel.lovable.app/";
+const CANONICAL = "https://arseny-portfolio-aisarus-projects-37ae3e37.vercel.app/";
 const OG_IMAGE = `${CANONICAL}og-card.png`;
 const LINKEDIN =
   "https://www.linkedin.com/in/%D0%B0%D1%80%D1%81%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BF%D0%B5%D1%80%D0%B5%D0%BB%D1%8C-68a21132b/";
