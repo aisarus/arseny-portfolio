@@ -18,7 +18,7 @@ function TwinPreview() {
       aria-valuenow={Number(time.toFixed(1))}
       onPointerMove={(event) => {
         const bounds = event.currentTarget.getBoundingClientRect();
-        setTime(Math.max(0, Math.min(32, ((event.clientX - bounds.left) / bounds.width) * 32));
+        setTime(Math.max(0, Math.min(32, ((event.clientX - bounds.left) / bounds.width) * 32)));
       }}
       onKeyDown={(event) => {
         if (event.key === "ArrowRight") setTime((value) => Math.min(32, value + 1));
