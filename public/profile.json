@@ -1,9 +1,9 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://arseny-perel.lovable.app/#person",
+  "@id": "https://arseny-portfolio-aisarus-projects-37ae3e37.vercel.app/#person",
   "name": "Arseniy Perel",
-  "url": "https://arseny-perel.lovable.app/",
+  "url": "https://arseny-portfolio-aisarus-projects-37ae3e37.vercel.app/",
   "email": "mailto:arielperseny@gmail.com",
   "jobTitle": "AI Product Builder",
   "description": "AI-native product builder in Ramat Gan, Israel focused on AI automation, rapid prototyping, agent workflows, debugging and verifiable delivery.",
