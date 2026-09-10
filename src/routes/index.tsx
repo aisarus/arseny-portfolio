@@ -15,7 +15,10 @@ import { Contact } from "@/components/site/contact";
 const TITLE = "Arseniy Perel — AI Product Builder in Israel | Automation & Prototyping";
 const DESCRIPTION =
   "Arseniy Perel is an AI Product Builder in Ramat Gan, Israel. AI automation, rapid prototyping, agent workflows, API integrations, debugging and evidence-driven delivery.";
-const CANONICAL = "https://aisarus.github.io/arseny-portfolio/";
+const CANONICAL = "https://arseny-perel.lovable.app/";
+const OG_IMAGE = `${CANONICAL}og-card.png`;
+const LINKEDIN =
+  "https://www.linkedin.com/in/%D0%B0%D1%80%D1%81%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BF%D0%B5%D1%80%D0%B5%D0%BB%D1%8C-68a21132b/";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -59,7 +62,7 @@ const structuredData = {
       ],
       sameAs: [
         "https://github.com/aisarus",
-        "https://arseny-perel.lovable.app",
+        LINKEDIN,
       ],
     },
     {
@@ -115,7 +118,15 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: CANONICAL },
+      { property: "og:site_name", content: "Arseniy Perel — AI Product Builder" },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Arseniy Perel — AI Product Builder, AI Automation, Rapid Prototyping" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
       { rel: "canonical", href: CANONICAL },
