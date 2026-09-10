@@ -84,7 +84,7 @@ function BrainPreview() {
         })}
         <circle className="brain-probe" cx={point.x} cy={point.y} r="3" />
       </svg>
-      <span>spatial probe</span>
+      <span>move, touch or use arrow keys</span>
     </div>
   );
 }
@@ -235,6 +235,7 @@ export function Lab() {
             Focused technical exercises in deterministic motion, spatial interaction, prompt optimization and messaging
             automation — each one running on its own set.
           </p>
+          <p className="label-mono mt-4">Interact: move, focus or tap the controls.</p>
         </div>
 
         <div className="crt-room mt-16">

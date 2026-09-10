@@ -40,12 +40,15 @@ jobs:
         run: |
           test -f dist/client/index.html
           test -f dist/client/cv/index.html
+          test -f dist/client/cv.pdf
+          test -f dist/client/og-card.png
           test -f dist/client/robots.txt
           test -f dist/client/sitemap.xml
           test -f dist/client/llms.txt
           test -f dist/client/profile.json
           grep -q "Arseniy Perel" dist/client/index.html
-          grep -q "/arseny-portfolio/" dist/client/index.html
+          grep -q "arseny-perel.lovable.app" dist/client/index.html
+          grep -q "arseny-perel.lovable.app" dist/client/sitemap.xml
           touch dist/client/.nojekyll
           cp dist/client/index.html dist/client/404.html
 

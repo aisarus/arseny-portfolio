@@ -9,24 +9,32 @@ type EffectsContextValue = {
   toggle: () => void;
 };
 
-const EffectsContext = createContext<EffectsContextValue>({ enabled: true, toggle: () => {} });
+const EffectsContext = createContext<EffectsContextValue>({ enabled: false, toggle: () => {} });
 
 export function EffectsProvider({ children }: { children: ReactNode }) {
-  const [enabled, setEnabled] = useState(true);
+  // Keep SSR/hydration and the first client paint static. This avoids starting animation loops
+  // before the page is useful, especially on phones. A saved user choice always wins.
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    let initial = true;
+    let initial = false;
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY);
       if (stored === "on" || stored === "off") {
         initial = stored === "on";
       } else {
-        initial = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
+        const compactViewport = window.innerWidth < 800;
+        initial = !reduced && !coarsePointer && !compactViewport;
       }
     } catch {
-      initial = true;
+      initial = false;
     }
-    setEnabled(initial);
+
+    if (!initial) return;
+    const id = window.setTimeout(() => setEnabled(true), 120);
+    return () => window.clearTimeout(id);
   }, []);
 
   useEffect(() => {
