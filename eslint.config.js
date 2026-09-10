@@ -1,5 +1,4 @@
 import js from "@eslint/js";
-import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
 import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
@@ -37,11 +36,14 @@ export default tseslint.config(
     },
   },
   {
-    // shadcn-style component modules intentionally export variants/helpers next to components.
-    files: ["src/components/ui/**/*.{ts,tsx}"],
+    // These modules intentionally export helpers/constants next to React components.
+    files: [
+      "src/components/ui/**/*.{ts,tsx}",
+      "src/components/concepts/shared.tsx",
+      "src/components/site/effects.tsx",
+    ],
     rules: {
       "react-refresh/only-export-components": "off",
     },
   },
-  eslintPluginPrettier,
 );
