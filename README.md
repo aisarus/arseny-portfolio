@@ -1,6 +1,6 @@
 # Arseniy Perel — AI Product Builder Portfolio
 
-**Live site:** [arseny-perel.lovable.app](https://arseny-perel.lovable.app)
+**Live site:** [arseny-portfolio-aisarus-projects-37ae3e37.vercel.app](https://arseny-portfolio-aisarus-projects-37ae3e37.vercel.app)
 
 Interactive portfolio for **Arseniy Perel**, an AI-native Product Builder focused on AI automation, rapid prototyping, system design, debugging and evidence-driven delivery.
 
@@ -52,9 +52,9 @@ bun run build
 
 ## CV
 
-- [Download one-page PDF](https://arseny-perel.lovable.app/cv.pdf)
-- [View web CV](https://arseny-perel.lovable.app/cv)
-- [Plain-text resume](https://arseny-perel.lovable.app/resume.txt)
+- [Download one-page PDF](https://arseny-portfolio-aisarus-projects-37ae3e37.vercel.app/cv.pdf)
+- [View web CV](https://arseny-portfolio-aisarus-projects-37ae3e37.vercel.app/cv)
+- [Plain-text resume](https://arseny-portfolio-aisarus-projects-37ae3e37.vercel.app/resume.txt)
 
 ## Contact
 
@@ -65,4 +65,4 @@ Ramat Gan, Israel
 
 ---
 
-Source is synced between GitHub and [Lovable](https://lovable.dev/projects/54d55b40-0055-4adc-b60d-f8fab9bc090a).
+GitHub is the source of truth and Vercel owns the production hosting path. Lovable is optional editor-only tooling and is not part of production delivery.

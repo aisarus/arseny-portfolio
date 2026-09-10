@@ -2,8 +2,8 @@ ARSENIY PEREL
 AI PRODUCT BUILDER | AI AUTOMATION | RAPID PROTOTYPING
 Ramat Gan, Israel
 Email: arielperseny@gmail.com
-Portfolio: https://arseny-perel.lovable.app/
-CV PDF: https://arseny-perel.lovable.app/cv.pdf
+Portfolio: https://arseny-portfolio-aisarus-projects-37ae3e37.vercel.app/
+CV PDF: https://arseny-portfolio-aisarus-projects-37ae3e37.vercel.app/cv.pdf
 LinkedIn: https://www.linkedin.com/in/%D0%B0%D1%80%D1%81%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BF%D0%B5%D1%80%D0%B5%D0%BB%D1%8C-68a21132b/
 GitHub: https://github.com/aisarus
 

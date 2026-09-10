@@ -100,7 +100,7 @@ export function CaseAegis() {
           </Reveal>
 
           <Reveal delay={80}>
-            <p className="label-mono">System diagram — hover or focus a node</p>
+            <p className="label-mono">System diagram — hover, focus or tap a node</p>
             <div className="aegis-inspector relative mt-4 aspect-[4/3] w-full border border-hairline sm:aspect-[16/10]">
               <svg
                 viewBox="0 0 100 100"

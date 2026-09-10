@@ -4,8 +4,8 @@ import type { ReactNode } from "react";
 const TITLE = "Arseniy Perel — CV | AI Product Builder";
 const DESCRIPTION =
   "CV of Arseniy Perel: AI Product Builder focused on AI automation, rapid prototyping, agent workflows, debugging and verifiable delivery in Israel.";
-const CANONICAL = "https://arseny-perel.lovable.app/cv";
-const OG_IMAGE = "https://arseny-perel.lovable.app/og-card.png";
+const CANONICAL = "https://arseny-portfolio-aisarus-projects-37ae3e37.vercel.app/cv";
+const OG_IMAGE = "https://arseny-portfolio-aisarus-projects-37ae3e37.vercel.app/og-card.png";
 const LINKEDIN =
   "https://www.linkedin.com/in/%D0%B0%D1%80%D1%81%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BF%D0%B5%D1%80%D0%B5%D0%BB%D1%8C-68a21132b/";
 
@@ -103,7 +103,7 @@ function CvPage() {
             <a href="mailto:arielperseny@gmail.com" className="underline underline-offset-2 hover:text-foreground">Email</a><span>·</span>
             <a href={LINKEDIN} target="_blank" rel="noreferrer noopener" className="underline underline-offset-2 hover:text-foreground">LinkedIn</a><span>·</span>
             <a href="https://github.com/aisarus" target="_blank" rel="noreferrer noopener" className="underline underline-offset-2 hover:text-foreground">GitHub</a><span>·</span>
-            <a href="https://arseny-perel.lovable.app" className="underline underline-offset-2 hover:text-foreground">Portfolio</a>
+            <a href="https://arseny-portfolio-aisarus-projects-37ae3e37.vercel.app" className="underline underline-offset-2 hover:text-foreground">Portfolio</a>
           </address>
         </header>
 
