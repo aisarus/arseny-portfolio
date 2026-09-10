@@ -18,7 +18,7 @@ function TwinPreview() {
       aria-valuenow={Number(time.toFixed(1))}
       onPointerMove={(event) => {
         const bounds = event.currentTarget.getBoundingClientRect();
-        setTime(Math.max(0, Math.min(32, ((event.clientX - bounds.left) / bounds.width) * 32)));
+        setTime(Math.max(0, Math.min(32, ((event.clientX - bounds.left) / bounds.width) * 32));
       }}
       onKeyDown={(event) => {
         if (event.key === "ArrowRight") setTime((value) => Math.min(32, value + 1));
@@ -84,7 +84,7 @@ function BrainPreview() {
         })}
         <circle className="brain-probe" cx={point.x} cy={point.y} r="3" />
       </svg>
-      <span>spatial probe</span>
+      <span>move, touch or use arrow keys</span>
     </div>
   );
 }
@@ -235,6 +235,7 @@ export function Lab() {
             Focused technical exercises in deterministic motion, spatial interaction, prompt optimization and messaging
             automation — each one running on its own set.
           </p>
+          <p className="label-mono mt-4">Interact: move, focus or tap the controls.</p>
         </div>
 
         <div className="crt-room mt-16">
