@@ -4,16 +4,16 @@ import { useActiveSection } from "@/hooks/use-reveal";
 import { EffectsToggle } from "./effects";
 
 const ITEMS = [
-  { id: "index", label: "Index" },
-  { id: "aegis", label: "Aegis" },
-  { id: "lamdan", label: "Lamdan" },
-  { id: "botforge", label: "BotForge" },
-  { id: "lab", label: "Lab" },
-  { id: "contact", label: "Contact" },
+  { id: "index", label: "Work", mobile: true },
+  { id: "aegis", label: "Aegis", mobile: false },
+  { id: "lamdan", label: "Lamdan", mobile: false },
+  { id: "botforge", label: "BotForge", mobile: false },
+  { id: "lab", label: "Lab", mobile: false },
+  { id: "contact", label: "Contact", mobile: true, cta: true },
 ];
 
 export function SiteNav() {
-  const active = useActiveSection(ITEMS.map((i) => i.id));
+  const active = useActiveSection(ITEMS.map((item) => item.id));
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -27,12 +27,12 @@ export function SiteNav() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-colors duration-500",
-        scrolled ? "bg-background/85 hairline-b backdrop-blur-md" : "bg-transparent",
+        scrolled ? "bg-background/90 hairline-b backdrop-blur-md" : "bg-transparent",
       )}
     >
       <nav
         aria-label="Section navigation"
-        className="mx-auto flex w-full max-w-[1320px] items-center justify-between gap-2 px-3 py-3 sm:gap-4 sm:px-8 lg:px-12"
+        className="mx-auto flex w-full max-w-[1320px] items-center gap-2 px-3 py-3 sm:gap-4 sm:px-8 lg:px-12"
       >
         <a
           href="#top"
@@ -42,30 +42,31 @@ export function SiteNav() {
           <span className="ml-2 hidden text-muted-foreground lg:inline">/ AI Product Builder</span>
         </a>
 
-
-        <ul className="ml-auto flex min-w-0 shrink items-center justify-start gap-0 overflow-x-auto [scrollbar-width:none] sm:gap-0.5 [&::-webkit-scrollbar]:hidden">
+        <ul className="ml-auto flex min-w-0 items-center gap-0.5">
           {ITEMS.map((item) => (
-            <li key={item.id} className={cn(item.id === "index" && "hidden lg:block")}>
-
+            <li key={item.id} className={cn(!item.mobile && "hidden md:block")}>
               <a
                 href={`#${item.id}`}
                 aria-current={active === item.id ? "true" : undefined}
                 className={cn(
-                  "relative block px-1.5 py-1.5 font-mono text-[10px] tracking-[0.1em] uppercase whitespace-nowrap transition-colors sm:px-2 sm:text-[11px] sm:tracking-[0.14em]",
-                  active === item.id
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground",
+                  "relative block px-1.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.08em] whitespace-nowrap transition-colors sm:px-2 sm:text-[11px] sm:tracking-[0.14em]",
+                  item.cta
+                    ? "border border-foreground/35 text-foreground hover:bg-foreground hover:text-background"
+                    : active === item.id
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground",
                 )}
               >
-
                 {item.label}
-                <span
-                  aria-hidden
-                  className={cn(
-                    "absolute inset-x-2 -bottom-0.5 h-px origin-left bg-current transition-transform duration-300",
-                    active === item.id ? "scale-x-100" : "scale-x-0",
-                  )}
-                />
+                {!item.cta ? (
+                  <span
+                    aria-hidden
+                    className={cn(
+                      "absolute inset-x-2 -bottom-0.5 h-px origin-left bg-current transition-transform duration-300",
+                      active === item.id ? "scale-x-100" : "scale-x-0",
+                    )}
+                  />
+                ) : null}
               </a>
             </li>
           ))}
