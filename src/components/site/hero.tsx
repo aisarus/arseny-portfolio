@@ -28,6 +28,14 @@ export function Hero() {
                 </span>
               </a>
               <a
+                href="/cv.pdf"
+                download="Arseniy_Perel_CV.pdf"
+                className="group inline-flex items-center gap-3 border border-foreground/35 px-6 py-3.5 font-mono text-[11px] tracking-[0.16em] uppercase transition-colors hover:border-foreground"
+              >
+                Download CV
+                <span aria-hidden>↓</span>
+              </a>
+              <a
                 href="https://github.com/aisarus"
                 target="_blank"
                 rel="noreferrer noopener"
