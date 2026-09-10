@@ -1,16 +1,29 @@
+import { lazy, Suspense } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import { EffectsProvider } from "@/components/site/effects";
 import { SiteNav } from "@/components/site/site-nav";
 import { Hero } from "@/components/site/hero";
 import { Pipeline } from "@/components/site/pipeline";
-import { CaseAegis } from "@/components/site/case-aegis";
-import { CaseLamdan } from "@/components/site/case-lamdan";
-import { CaseBotforge } from "@/components/site/case-botforge";
-import { FailureIndex } from "@/components/site/failure-index";
-import { Lab } from "@/components/site/lab";
-import { About } from "@/components/site/about";
+import { CaseIndex } from "@/components/site/case-index";
 import { Contact } from "@/components/site/contact";
+
+const CaseAegis = lazy(() =>
+  import("@/components/site/case-aegis").then((module) => ({ default: module.CaseAegis })),
+);
+const CaseLamdan = lazy(() =>
+  import("@/components/site/case-lamdan").then((module) => ({ default: module.CaseLamdan })),
+);
+const CaseBotforge = lazy(() =>
+  import("@/components/site/case-botforge").then((module) => ({ default: module.CaseBotforge })),
+);
+const FailureIndex = lazy(() =>
+  import("@/components/site/failure-index").then((module) => ({ default: module.FailureIndex })),
+);
+const Lab = lazy(() => import("@/components/site/lab").then((module) => ({ default: module.Lab })));
+const About = lazy(() =>
+  import("@/components/site/about").then((module) => ({ default: module.About })),
+);
 
 const TITLE = "Arseniy Perel — AI Product Builder in Israel | Automation & Prototyping";
 const DESCRIPTION =
@@ -60,10 +73,7 @@ const structuredData = {
         "debugging",
         "software verification",
       ],
-      sameAs: [
-        "https://github.com/aisarus",
-        LINKEDIN,
-      ],
+      sameAs: ["https://github.com/aisarus", LINKEDIN],
     },
     {
       "@type": "ItemList",
@@ -122,7 +132,10 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: OG_IMAGE },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Arseniy Perel — AI Product Builder, AI Automation, Rapid Prototyping" },
+      {
+        property: "og:image:alt",
+        content: "Arseniy Perel — AI Product Builder, AI Automation, Rapid Prototyping",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
@@ -143,6 +156,10 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+function LazyFallback() {
+  return <div className="h-16 sm:h-24" aria-hidden />;
+}
+
 function Index() {
   return (
     <EffectsProvider>
@@ -150,12 +167,25 @@ function Index() {
         <SiteNav />
         <Hero />
         <Pipeline />
-        <CaseAegis />
-        <CaseLamdan />
-        <CaseBotforge />
-        <FailureIndex />
-        <Lab />
-        <About />
+        <CaseIndex />
+        <Suspense fallback={<LazyFallback />}>
+          <CaseAegis />
+        </Suspense>
+        <Suspense fallback={<LazyFallback />}>
+          <CaseLamdan />
+        </Suspense>
+        <Suspense fallback={<LazyFallback />}>
+          <CaseBotforge />
+        </Suspense>
+        <Suspense fallback={<LazyFallback />}>
+          <FailureIndex />
+        </Suspense>
+        <Suspense fallback={<LazyFallback />}>
+          <Lab />
+        </Suspense>
+        <Suspense fallback={<LazyFallback />}>
+          <About />
+        </Suspense>
         <Contact />
       </main>
     </EffectsProvider>
