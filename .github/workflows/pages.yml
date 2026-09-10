@@ -47,6 +47,11 @@ jobs:
           test -f dist/client/sitemap.xml
           test -f dist/client/llms.txt
           test -f dist/client/profile.json
+          test -f dist/client/about/index.html
+          test -f dist/client/ai-automation/index.html
+          test -f dist/client/work/aegis/index.html
+          test -f dist/client/work/lamdan/index.html
+          test -f dist/client/work/botforge/index.html
           grep -q "Arseniy Perel" dist/client/index.html
           grep -q "arseny-perel.lovable.app" dist/client/index.html
           grep -q "arseny-perel.lovable.app" dist/client/sitemap.xml
@@ -54,3 +59,6 @@ jobs:
           grep -q "Contact me" dist/client/index.html
           grep -q "_vercel/insights/script.js" dist/client/index.html
           grep -q "_vercel/speed-insights/script.js" dist/client/index.html
+          grep -q "Aegis Operator" dist/client/work/aegis/index.html
+          grep -q "Lamdan" dist/client/work/lamdan/index.html
+          grep -q "BotForge" dist/client/work/botforge/index.html
